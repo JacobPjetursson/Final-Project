@@ -3,19 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-    public float speed = 10f;
+    public float speed = 5f;
+    private Rigidbody2D rb2D;
 
 
     // Use this for initialization
     void Start () {
+        rb2D = GetComponent<Rigidbody2D>();
     }
 
 	// Update is called once per frame
 	void FixedUpdate () {
         // movement
-        float movementSpeedY = speed * Input.GetAxis("Vertical") * Time.deltaTime;
-        float movementSpeedX = speed * Input.GetAxis("Horizontal") * Time.deltaTime;
+        float movementSpeedY = speed * Input.GetAxisRaw("Vertical") * Time.deltaTime;
+        float movementSpeedX = speed * Input.GetAxisRaw("Horizontal") * Time.deltaTime;
         transform.Translate(movementSpeedX, movementSpeedY, 0);
+        /*
+        float movementSpeedY = speed * Input.GetAxisRaw("Vertical");
+        float movementSpeedX = speed * Input.GetAxisRaw("Horizontal");
+        Vector2 movement = new Vector2(movementSpeedX, movementSpeedY);
+        rb2D.AddForce(movement * speed);
+        */
     }
 
     private void OnTriggerEnter2D(Collider2D other)

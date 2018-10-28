@@ -56,5 +56,8 @@ public class LevelManager : MonoBehaviour {
         Debug.Log(reqKeys);
     }
 
+    public int getReqKeys() {
+        return reqKeys;
+    }
 
 }
