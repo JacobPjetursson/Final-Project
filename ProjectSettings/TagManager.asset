@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Obstacle
+  - Key
+  - LevelManager
+  - Canvas
   layers:
   - Default
   - TransparentFX
@@ -14,8 +17,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - EnemyLayer
+  - InvisWall
   - 
   - 
   - 
@@ -42,6 +45,24 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: EndPoint
+  - name: 1
     uniqueID: 3548206013
+    locked: 0
+  - name: 2
+    uniqueID: 848198729
+    locked: 0
+  - name: 3
+    uniqueID: 53548547
+    locked: 0
+  - name: 4
+    uniqueID: 1268090683
+    locked: 0
+  - name: 5
+    uniqueID: 58564397
+    locked: 0
+  - name: 6
+    uniqueID: 3143386071
+    locked: 0
+  - name: 7
+    uniqueID: 1014932607
     locked: 0

@@ -140,14 +140,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560ed4d9013ca446aa5c6e473913b240, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingPoint: {x: 0, y: 0}
   player: {fileID: 1955994675064334, guid: e717a18d0b0fd4b4f8e24f714419696f, type: 2}
   endPoint: {fileID: 1452509013141246}
   key: {fileID: 1816929835607292, guid: 34a046d34c81149cb9226ae3a5803c79, type: 2}
+  projectile: {fileID: 1428049988547164, guid: 777a92b84b43143ba933ab70d600bc5e, type: 2}
   currLevel: 1
-  keyPositions:
-  - {x: -5, y: 0}
-  - {x: 0, y: 2}
 --- !u!212 &212544434479681794
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -180,8 +177,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -746761283
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9a10daf64934d42f8bdd650ef6a09a1c, type: 3}
   m_Color: {r: 0, g: 1, b: 0, a: 1}

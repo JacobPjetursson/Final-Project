@@ -5,20 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
 
-    public Vector2 startingPoint;
+    private Vector2 startingPoint;
     public GameObject player;
     public GameObject endPoint;
     public GameObject key;
+    public GameObject projectile;
     public int currLevel = 1;
     private int reqKeys;
 
-    public List<Vector2> keyPositions = new List<Vector2>();
+    private List<Vector3> keyPositions = new List<Vector3>();
+    private GameObject[] keys;
 
-	// Use this for initialization
-	void Start () {
-        spawnPlayer();
-        spawnKeys();
-        reqKeys = keyPositions.Count;
+    // Use this for initialization
+    void Start () {
+        startingPoint = GameObject.FindGameObjectWithTag("Player").transform.position;
+        keys = GameObject.FindGameObjectsWithTag("Key");
+        foreach (GameObject k in keys)
+        {
+            keyPositions.Add(k.transform.position);
+        }
+        reqKeys = keys.Length;
     }
 	
 	// Update is called once per frame
@@ -27,22 +33,26 @@ public class LevelManager : MonoBehaviour {
         // Check if player dead
         if (!GameObject.FindWithTag("Player")) {
             spawnPlayer();
+            spawnKeys();
         }
 	}
+
+    private void spawnKeys() {
+        for (int i = 0; i < keys.Length; i++) {
+            if (keys[i] == null) {
+                GameObject keyClone;
+                keyClone = Instantiate(key, keyPositions[i], this.transform.rotation) as GameObject;
+                keyClone.transform.SetParent(this.transform);
+                keys[i] = keyClone;
+            }
+        }
+        reqKeys = keys.Length;
+    }
 
     private void spawnPlayer() {
         GameObject playerClone;
         playerClone = Instantiate(player, startingPoint, this.transform.rotation) as GameObject;
         playerClone.transform.SetParent(this.transform);
-    }
-
-    private void spawnKeys() {
-        foreach (Vector2 pos in keyPositions)
-        {
-            GameObject keyClone;
-            keyClone = Instantiate(key, pos, this.transform.rotation) as GameObject;
-            keyClone.transform.SetParent(this.transform);
-        }
     }
 
     public void changeLevel() {
@@ -53,7 +63,6 @@ public class LevelManager : MonoBehaviour {
 
     public void keyPickup() {
         reqKeys--;
-        Debug.Log(reqKeys);
     }
 
     public int getReqKeys() {
