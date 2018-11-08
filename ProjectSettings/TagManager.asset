@@ -8,6 +8,8 @@ TagManager:
   - Key
   - LevelManager
   - Canvas
+  - Spikes
+  - Enemy
   layers:
   - Default
   - TransparentFX

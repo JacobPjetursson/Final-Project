@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114893607639328276}
   m_Layer: 8
   m_Name: BaseEnemy
-  m_TagString: Obstacle
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,7 +71,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 1428049988547164}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: fefdf38a49e9b44168accceeacd3bdbc, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0

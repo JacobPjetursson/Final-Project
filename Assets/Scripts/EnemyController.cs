@@ -18,4 +18,19 @@ public class EnemyController : MonoBehaviour {
     void Update () {
         
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            Destroy(other.gameObject);
+            rig2D.velocity = initialDirection * new Vector2(speed, speed);
+
+        }
+        if (other.gameObject.tag == "Obstacle")
+        {
+            initialDirection *= -1;
+            rig2D.velocity = initialDirection * new Vector2(speed, speed);
+        }
+    }
 }
