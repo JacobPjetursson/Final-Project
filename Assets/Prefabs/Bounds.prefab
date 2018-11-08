@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4159138947073362}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 212459394896396792}
   - component: {fileID: 114935489280186512}
   - component: {fileID: 61343694121637446}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Right
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 212183455640262824}
   - component: {fileID: 114771701363065690}
   - component: {fileID: 61462520266534520}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Top
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 212958072725383762}
   - component: {fileID: 114097641499754260}
   - component: {fileID: 61784024976178024}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bottom
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 212576612127173608}
   - component: {fileID: 114492371736678676}
   - component: {fileID: 61665599554492898}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Left
   m_TagString: Obstacle
   m_Icon: {fileID: 0}

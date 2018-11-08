@@ -9,12 +9,14 @@ public class LevelManager : MonoBehaviour {
     public GameObject player;
     public GameObject endPoint;
     public GameObject key;
-    public GameObject projectile;
+    public GameObject ai;
     public int currLevel = 1;
     private int reqKeys;
 
     private List<Vector3> keyPositions = new List<Vector3>();
+    private List<Vector3> aiPositions = new List<Vector3>();
     private GameObject[] keys;
+    private GameObject[] AIs;
 
     // Use this for initialization
     void Start () {
@@ -25,17 +27,24 @@ public class LevelManager : MonoBehaviour {
             keyPositions.Add(k.transform.position);
         }
         reqKeys = keys.Length;
+
+        AIs = GameObject.FindGameObjectsWithTag("AIEnemy");
+        foreach (GameObject a in AIs)
+        {
+            aiPositions.Add(a.transform.position);
+        }
     }
 	
 	// Update is called once per frame
 	void Update () {
 
-        // Check if player dead
-        if (!GameObject.FindWithTag("Player")) {
-            spawnPlayer();
-            spawnKeys();
-        }
 	}
+
+    public void restartLevel() {
+        spawnAIs();
+        spawnPlayer();
+        spawnKeys();
+    }
 
     private void spawnKeys() {
         for (int i = 0; i < keys.Length; i++) {
@@ -55,8 +64,22 @@ public class LevelManager : MonoBehaviour {
         playerClone.transform.SetParent(this.transform);
     }
 
+    private void spawnAIs() {
+        for (int i = 0; i < AIs.Length; i++)
+        {
+
+            if (AIs[i] != null) {
+                Destroy(AIs[i]);
+            }
+            GameObject aiClone;
+            aiClone = Instantiate(ai, aiPositions[i], this.transform.rotation) as GameObject;
+            aiClone.transform.SetParent(this.transform);
+            AIs[i] = aiClone;
+
+        }
+    }
+
     public void changeLevel() {
-        Debug.Log("Endpoint reached");
         string nextSceneName = "Level " + (currLevel + 1).ToString();
         SceneManager.LoadScene(nextSceneName);
     }

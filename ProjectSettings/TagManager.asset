@@ -10,6 +10,8 @@ TagManager:
   - Canvas
   - Spikes
   - Enemy
+  - InvisWall
+  - AIEnemy
   layers:
   - Default
   - TransparentFX
@@ -21,8 +23,8 @@ TagManager:
   - 
   - EnemyLayer
   - InvisWall
-  - 
-  - 
+  - AILayer
+  - ObstacleLayer
   - 
   - 
   - 

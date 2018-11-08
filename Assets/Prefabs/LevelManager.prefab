@@ -143,7 +143,7 @@ MonoBehaviour:
   player: {fileID: 1955994675064334, guid: e717a18d0b0fd4b4f8e24f714419696f, type: 2}
   endPoint: {fileID: 1452509013141246}
   key: {fileID: 1816929835607292, guid: 34a046d34c81149cb9226ae3a5803c79, type: 2}
-  projectile: {fileID: 1428049988547164, guid: 777a92b84b43143ba933ab70d600bc5e, type: 2}
+  ai: {fileID: 1535210137949514, guid: dbed82c9b3ff04a6faa673629a901047, type: 2}
   currLevel: 1
 --- !u!212 &212544434479681794
 SpriteRenderer:
