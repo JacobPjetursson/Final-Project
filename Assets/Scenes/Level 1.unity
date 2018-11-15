@@ -942,6 +942,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &788937946 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1955994675064334, guid: e717a18d0b0fd4b4f8e24f714419696f,
+    type: 2}
+  m_PrefabInternal: {fileID: 655974525}
 --- !u!1001 &898222646
 Prefab:
   m_ObjectHideFlags: 0
@@ -1314,6 +1319,10 @@ Prefab:
     - target: {fileID: 1535210137949514, guid: dbed82c9b3ff04a6faa673629a901047, type: 2}
       propertyPath: m_TagString
       value: AIEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535210137949514, guid: dbed82c9b3ff04a6faa673629a901047, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbed82c9b3ff04a6faa673629a901047, type: 2}
@@ -1968,9 +1977,9 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114403968530002446, guid: 27168f3b23717433688449aeb4e9e4e6,
         type: 2}
-      propertyPath: initialTimeLeft
-      value: 4
-      objectReference: {fileID: 0}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 788937946}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27168f3b23717433688449aeb4e9e4e6, type: 2}
   m_IsPrefabAsset: 0

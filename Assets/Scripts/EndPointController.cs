@@ -14,7 +14,7 @@ public class EndPointController : MonoBehaviour {
 	void Start () {
         levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        open = levelManager.getReqKeys() == 0;
+        open = levelManager.getReqCoins() == 0;
     }
 	
 	// Update is called once per frame

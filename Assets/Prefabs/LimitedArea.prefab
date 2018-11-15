@@ -114,8 +114,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80f6ad4ffc7f04e4181644410ad9a53a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialTimeLeft: 3
+  initialTimeLeft: 4
   text: {fileID: 114409189917647976}
+  player: {fileID: 1955994675064334, guid: e717a18d0b0fd4b4f8e24f714419696f, type: 2}
 --- !u!114 &114409189917647976
 MonoBehaviour:
   m_ObjectHideFlags: 1

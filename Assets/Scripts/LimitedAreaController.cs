@@ -12,14 +12,14 @@ public class LimitedAreaController : MonoBehaviour {
     private bool playerInside = false;
     private Collider2D col;
     private bool countingDown = false;
-    private GameObject player;
+    public GameObject player;
 
 
     // Use this for initialization
     void Start () {
         col = GetComponent<BoxCollider2D>();
         canvas = GetComponent<Canvas>();
-        text.transform.SetParent(canvas.transform);
+        //text.transform.SetParent(canvas.transform);
         text.text = initialTimeLeft.ToString();
         //text.transform.position = this.transform.position;
         timeLeft = initialTimeLeft;
