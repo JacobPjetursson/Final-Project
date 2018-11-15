@@ -42,6 +42,7 @@ public class LevelManager : MonoBehaviour {
 
     public void restartLevel() {
         respawnAIs();
+        respawnKeys();
         spawnCoins();
         respawnPlayers();
     }
