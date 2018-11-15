@@ -1062,6 +1062,19 @@ Prefab:
     - target: {fileID: 114197838205056410, guid: dbed82c9b3ff04a6faa673629a901047,
         type: 2}
       propertyPath: pathFindInterval
+    - target: {fileID: 212801545617583292, guid: dbed82c9b3ff04a6faa673629a901047,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212801545617583292, guid: dbed82c9b3ff04a6faa673629a901047,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212801545617583292, guid: dbed82c9b3ff04a6faa673629a901047,
+        type: 2}
+      propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1689,6 +1702,20 @@ Prefab:
         type: 2}
       propertyPath: tileResolution
       value: 6
+    - target: {fileID: 212801545617583292, guid: dbed82c9b3ff04a6faa673629a901047,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212801545617583292, guid: dbed82c9b3ff04a6faa673629a901047,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212801545617583292, guid: dbed82c9b3ff04a6faa673629a901047,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbed82c9b3ff04a6faa673629a901047, type: 2}
