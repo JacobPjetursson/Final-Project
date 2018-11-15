@@ -14,7 +14,7 @@ public class EndPointController : MonoBehaviour {
 	void Start () {
         levelManager = this.transform.parent.gameObject.GetComponent<LevelManager>();
         spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
-        open = levelManager.getReqKeys() == 0;
+        open = levelManager.getReqCoins() == 0;
     }
 	
 	// Update is called once per frame
@@ -25,7 +25,7 @@ public class EndPointController : MonoBehaviour {
             spriteRenderer.color = red;
         }
 
-        open = levelManager.getReqKeys() == 0;
+        open = levelManager.getReqCoins() == 0;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

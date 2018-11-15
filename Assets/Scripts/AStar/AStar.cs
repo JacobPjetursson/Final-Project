@@ -10,7 +10,7 @@ namespace AStar
         public static float optimality = 1.0f;
 
 
-        public static Point FindPath(Grid grid, Point start, Bounds end)
+        public static Point FindPath(TileGrid grid, Point start, Bounds end)
         {
             Node startNode = grid.nodes[start.x, start.y];
             Node endNode = grid.nodes[(int)end.center.x, (int)end.center.y];

@@ -21,7 +21,7 @@ namespace AStar {
         private int width;
         private int height;
         private bool[,] tilemap;
-        private Grid grid;
+        private TileGrid grid;
         private Vector2 direction;
         private Bounds bounds;
 
@@ -39,7 +39,7 @@ namespace AStar {
 
             fillTileMap();
             // create a grid
-            grid = new Grid(width, height, tilemap);
+            grid = new TileGrid(width, height, tilemap);
         }
         /*
         private void OnTriggerEnter2D(Collider2D other)

@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80f6ad4ffc7f04e4181644410ad9a53a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialTimeLeft: 4
+  initialTimeLeft: 3
   text: {fileID: 114409189917647976}
 --- !u!114 &114409189917647976
 MonoBehaviour:

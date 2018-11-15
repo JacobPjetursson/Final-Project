@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114219417445202238}
   m_Layer: 0
   m_Name: LevelManager
-  m_TagString: Untagged
+  m_TagString: LevelManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53,7 +53,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1452509013141246}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 0, z: 0}
+  m_LocalPosition: {x: 0.1, y: 3.65, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 0}
   m_Children: []
   m_Father: {fileID: 4612140313149186}
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1955994675064334, guid: e717a18d0b0fd4b4f8e24f714419696f, type: 2}
   endPoint: {fileID: 1452509013141246}
-  key: {fileID: 1816929835607292, guid: 34a046d34c81149cb9226ae3a5803c79, type: 2}
+  coin: {fileID: 1816929835607292, guid: 34a046d34c81149cb9226ae3a5803c79, type: 2}
   ai: {fileID: 1535210137949514, guid: dbed82c9b3ff04a6faa673629a901047, type: 2}
   currLevel: 1
 --- !u!212 &212544434479681794

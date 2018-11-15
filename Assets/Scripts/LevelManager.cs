@@ -8,25 +8,25 @@ public class LevelManager : MonoBehaviour {
     private Vector2 startingPoint;
     public GameObject player;
     public GameObject endPoint;
-    public GameObject key;
+    public GameObject coin;
     public GameObject ai;
     public int currLevel = 1;
-    private int reqKeys;
+    private int reqCoins;
 
-    private List<Vector3> keyPositions = new List<Vector3>();
+    private List<Vector3> coinPositions = new List<Vector3>();
     private List<Vector3> aiPositions = new List<Vector3>();
-    private GameObject[] keys;
+    private GameObject[] coins;
     private GameObject[] AIs;
 
     // Use this for initialization
     void Start () {
         startingPoint = GameObject.FindGameObjectWithTag("Player").transform.position;
-        keys = GameObject.FindGameObjectsWithTag("Key");
-        foreach (GameObject k in keys)
+        coins = GameObject.FindGameObjectsWithTag("Coin");
+        foreach (GameObject c in coins)
         {
-            keyPositions.Add(k.transform.position);
+            coinPositions.Add(c.transform.position);
         }
-        reqKeys = keys.Length;
+        reqCoins = coins.Length;
 
         AIs = GameObject.FindGameObjectsWithTag("AIEnemy");
         foreach (GameObject a in AIs)
@@ -43,19 +43,19 @@ public class LevelManager : MonoBehaviour {
     public void restartLevel() {
         spawnAIs();
         spawnPlayer();
-        spawnKeys();
+        spawnCoins();
     }
 
-    private void spawnKeys() {
-        for (int i = 0; i < keys.Length; i++) {
-            if (keys[i] == null) {
-                GameObject keyClone;
-                keyClone = Instantiate(key, keyPositions[i], this.transform.rotation) as GameObject;
-                keyClone.transform.SetParent(this.transform);
-                keys[i] = keyClone;
+    private void spawnCoins() {
+        for (int i = 0; i < coins.Length; i++) {
+            if (coins[i] == null) {
+                GameObject coinClone;
+                coinClone = Instantiate(coin, coinPositions[i], this.transform.rotation) as GameObject;
+                coinClone.transform.SetParent(this.transform);
+                coins[i] = coinClone;
             }
         }
-        reqKeys = keys.Length;
+        reqCoins = coins.Length;
     }
 
     private void spawnPlayer() {
@@ -84,12 +84,12 @@ public class LevelManager : MonoBehaviour {
         SceneManager.LoadScene(nextSceneName);
     }
 
-    public void keyPickup() {
-        reqKeys--;
+    public void coinPickup() {
+        reqCoins--;
     }
 
-    public int getReqKeys() {
-        return reqKeys;
+    public int getReqCoins() {
+        return reqCoins;
     }
 
 }

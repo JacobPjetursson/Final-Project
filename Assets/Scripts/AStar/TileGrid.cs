@@ -3,13 +3,13 @@ using System.Collections.Generic;
 
 namespace AStar
 {
-    public class Grid
+    public class TileGrid
     {
         public Node[,] nodes;
         int gridsize_x, gridsize_y;
 
 
-        public Grid(int width, int height, bool[,] tiles)
+        public TileGrid(int width, int height, bool[,] tiles)
         {
             gridsize_x = width;
             gridsize_y = height;

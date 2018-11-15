@@ -12,6 +12,7 @@ TagManager:
   - Enemy
   - InvisWall
   - AIEnemy
+  - Coin
   layers:
   - Default
   - TransparentFX
