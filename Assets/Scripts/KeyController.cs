@@ -7,12 +7,13 @@ public class KeyController : MonoBehaviour {
 	public GameObject door;
 	private SpriteRenderer spriteRenderer;
 	private PolygonCollider2D col;
-	public float doorSpeed;
+	private float doorSpeed = 2;
     public Vector2 doorInitialDirection;
-    Rigidbody2D rig2D;
-	private Vector2 doorPos;
-	private float doorHeight;
-	private bool open;
+    Rigidbody2D doorRig2D;
+	private Vector2 initialDoorPos;
+    private bool doorOpen;
+    private Vector3 doorSize;
+
 	
 
 	// Use this for initialization
@@ -21,20 +22,33 @@ public class KeyController : MonoBehaviour {
 		this.spriteRenderer = GetComponent<SpriteRenderer>();
 		this.col = GetComponent<PolygonCollider2D>();
 		
-		rig2D = door.GetComponent<Rigidbody2D>();
-		doorPos = door.transform.position;
-		doorHeight = door.GetComponent<SpriteRenderer>().bounds.size.y;
-		open = false;
+        doorRig2D = door.GetComponent<Rigidbody2D>();
+        initialDoorPos = door.transform.position;
+        doorSize = door.GetComponent<PolygonCollider2D>().bounds.size;
+		doorOpen = false;
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if ((door.transform.position.y > doorPos.y + doorHeight) && !open) {
-            rig2D.velocity = Vector2.zero;
-            open = true;
-		}
-		
+        if (!doorOpen) {
+            if (doorInitialDirection.y == 1 && door.transform.position.y >= initialDoorPos.y + doorSize.y)
+            {
+                stopDoor();
+            }
+            else if (doorInitialDirection.y == -1 && door.transform.position.y <= initialDoorPos.y - doorSize.y)
+            {
+                stopDoor();
+            }
+            else if (doorInitialDirection.x == 1 && door.transform.position.x >= initialDoorPos.x + doorSize.x)
+            {
+                stopDoor();
+            }
+            else if (doorInitialDirection.x == -1 && door.transform.position.x <= initialDoorPos.x - doorSize.x)
+            {
+                stopDoor();
+            }
+        }
 	}
 
 	private void OnTriggerEnter2D(Collider2D other)
@@ -42,16 +56,20 @@ public class KeyController : MonoBehaviour {
         if(other.gameObject.tag == "Player") {
 			spriteRenderer.enabled = false;
 			col.enabled = false;
-            rig2D.velocity = doorInitialDirection * new Vector2(doorSpeed, doorSpeed);
+            doorRig2D.velocity = doorInitialDirection * new Vector2(doorSpeed, doorSpeed);
         }
     }
 
     public void respawn() {
         spriteRenderer.enabled = true;
         col.enabled = true;
-        door.transform.position = doorPos;
-        open = false;
+        door.transform.position = initialDoorPos;
+        doorOpen = false;
+    }
 
+    private void stopDoor() {
+        doorRig2D.velocity = Vector2.zero;
+        doorOpen = true;
     }
 
 }

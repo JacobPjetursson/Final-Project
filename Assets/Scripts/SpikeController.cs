@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpikeController : MonoBehaviour {
 
 	public float speed;
-    public Vector2 initialDir;
+    public Vector2 spikeAngle;
     Rigidbody2D rig2D;
     private Vector2 initialPos;
     private Vector3 boundsSize;
@@ -13,31 +13,54 @@ public class SpikeController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         rig2D = this.gameObject.GetComponent<Rigidbody2D>();
-        rig2D.velocity = initialDir * new Vector2(speed, speed);
+        rig2D.velocity = spikeAngle * new Vector2(speed, speed);
         boundsSize = GetComponent<PolygonCollider2D>().bounds.size;
         initialPos = this.transform.position;
 
     }
 	
 	void Update () {
-        if (initialDir.x == 0 && this.transform.position.y >= initialPos.y + boundsSize.y)  {
-            respawn();
-		}
-        else if (initialDir.x == 0 && this.transform.position.y <= initialPos.y) {
-            respawn();
-		}
-        else if (initialDir.y == 0 && this.transform.position.x >= initialPos.x + boundsSize.x) {
-            respawn();
-        }
-        else if (initialDir.y == 0 && this.transform.position.x <= initialPos.x) {
-            respawn();
+
+        if (spikeAngle.x == 1) {
+            print(initialPos.x);
+            print(this.transform.position.x);
+            if (this.transform.position.x >= initialPos.x) {
+                changeDir();
+            }
+            else if (this.transform.position.x <= initialPos.x - boundsSize.x)
+            {
+                changeDir();
+            }
+
+        } else if (spikeAngle.x == -1) {
+            if (this.transform.position.x <= initialPos.x) {
+                changeDir();
+            } 
+            else if (this.transform.position.x >= initialPos.x + boundsSize.x)
+            {
+                changeDir();
+            }
+        } else if (spikeAngle.y == 1) {
+            if (this.transform.position.y >= initialPos.y) {
+                changeDir();
+            } 
+            else if (this.transform.position.y <= initialPos.y - boundsSize.y) {
+                changeDir();
+            }
         }
 
+        else if (spikeAngle.y == -1) {
+            if (this.transform.position.y <= initialPos.y) {
+                changeDir();
+            } else if (this.transform.position.y >= initialPos.y + boundsSize.y)
+            {
+                changeDir();
+            }
+        }
 	}
 
-    private void respawn() {
-        initialDir *= -1;
-        rig2D.velocity = initialDir * new Vector2(speed, speed);
+    private void changeDir() {
+        rig2D.velocity *= -1;
     }
 }
 

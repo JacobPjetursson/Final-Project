@@ -109,7 +109,7 @@ namespace AStar {
             Vector2 from_vec = posToTile(this.transform.position);
             Point fromPoint = new Point((int)from_vec.x, (int)from_vec.y);
 
-            Bounds toBounds = player.GetComponent<BoxCollider2D>().bounds;
+            Bounds toBounds = player.GetComponent<PolygonCollider2D>().bounds;
             toBounds.center = posToTile(toBounds.center);
             toBounds.extents += this.bounds.extents;
             toBounds.extents *= tileResolution;
