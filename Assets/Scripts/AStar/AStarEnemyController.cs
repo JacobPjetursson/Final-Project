@@ -32,7 +32,7 @@ namespace AStar {
         // Use this for initialization
         void Start()
         {
-            this.bounds = GetComponent<BoxCollider2D>().bounds;
+            this.bounds = GetComponent<PolygonCollider2D>().bounds;
             startPos = this.transform.position;
             freezePos = false;
 
