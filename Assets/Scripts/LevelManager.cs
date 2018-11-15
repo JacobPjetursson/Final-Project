@@ -68,7 +68,7 @@ public class LevelManager : MonoBehaviour {
 
     private void respawnKeys() {
         for (int i = 0; i < keys.Length; i++) {
-
+            keys[i].GetComponent<KeyController>().respawn();
         }
     }
 

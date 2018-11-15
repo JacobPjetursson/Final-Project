@@ -34,14 +34,5 @@ public class SpikeController : MonoBehaviour {
         //rig2D = this.gameObject.GetComponent<Rigidbody2D>();
         rig2D.velocity = initialDirection * new Vector2(speed, speed);
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            Destroy(other.gameObject);
-        }
-    }
-
 }
 

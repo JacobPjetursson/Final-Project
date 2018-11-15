@@ -23,9 +23,9 @@ GameObject:
   - component: {fileID: 60284190057750250}
   - component: {fileID: 114238356436189268}
   - component: {fileID: 50778840028729380}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Spikes
-  m_TagString: Spikes
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,7 +72,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
