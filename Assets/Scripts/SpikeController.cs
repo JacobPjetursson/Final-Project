@@ -9,6 +9,7 @@ public class SpikeController : MonoBehaviour {
     Rigidbody2D rig2D;
     private Vector2 initialPos;
     private Vector3 boundsSize;
+    private bool turning = false;
 
     // Use this for initialization
     void Start () {
@@ -20,10 +21,8 @@ public class SpikeController : MonoBehaviour {
     }
 	
 	void Update () {
-
+        if (turning) return;
         if (spikeAngle.x == 1) {
-            print(initialPos.x);
-            print(this.transform.position.x);
             if (this.transform.position.x >= initialPos.x) {
                 changeDir();
             }
@@ -61,6 +60,13 @@ public class SpikeController : MonoBehaviour {
 
     private void changeDir() {
         rig2D.velocity *= -1;
+        turning = true;
+        StartCoroutine(doneTurning());
+    }
+
+    private IEnumerator doneTurning() {
+        yield return new WaitForSeconds(1);
+        turning = false;
     }
 }
 

@@ -21,15 +21,16 @@ namespace AStar {
         private int width;
         private int height;
         private bool[,] tilemap;
+        private bool faceRight = false;
         private TileGrid grid;
         private Vector2 direction;
         private Bounds bounds;
         private Vector2 startPos;
+        private Rigidbody2D rig2D;
 
         private LevelManager levelManager;
-        
 
-        // Use this for initialization
+
         void Start()
         {
             this.bounds = GetComponent<PolygonCollider2D>().bounds;
@@ -46,6 +47,7 @@ namespace AStar {
             grid = new TileGrid(width, height, tilemap);
 
             levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
+            rig2D = GetComponent<Rigidbody2D>();
         }
 
         Vector2 posToTile(Vector2 pos)
@@ -69,7 +71,19 @@ namespace AStar {
         void Update()
         {
             StartCoroutine(findPath());
-            this.transform.Translate(speed * direction * Time.deltaTime);
+            rig2D.velocity = (speed * direction);
+
+            if (rig2D.velocity.x < 0 && faceRight)
+            {
+                transform.localRotation = Quaternion.Euler(0, 0, 0);
+                faceRight = false;
+
+            }
+            else if (rig2D.velocity.x > 0 && !faceRight)
+            {
+                transform.localRotation = Quaternion.Euler(0, 180, 0);
+                faceRight = true;
+            }
         }
 
         void fillTileMap()
@@ -109,7 +123,7 @@ namespace AStar {
             Vector2 from_vec = posToTile(this.transform.position);
             Point fromPoint = new Point((int)from_vec.x, (int)from_vec.y);
 
-            Bounds toBounds = player.GetComponent<PolygonCollider2D>().bounds;
+            Bounds toBounds = player.GetComponent<BoxCollider2D>().bounds;
             toBounds.center = posToTile(toBounds.center);
             toBounds.extents += this.bounds.extents;
             toBounds.extents *= tileResolution;

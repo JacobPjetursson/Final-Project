@@ -27,8 +27,8 @@ TagManager:
   - InvisWall
   - AILayer
   - ObstacleLayer
-  - ObjectLayer
-  - 
+  - SpikeLayer
+  - DoorLayer
   - 
   - 
   - 

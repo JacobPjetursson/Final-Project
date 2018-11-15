@@ -8,20 +8,32 @@ public class PlayerController : MonoBehaviour {
     private LevelManager levelManager;
     private Vector2 startPos;
     private Rigidbody2D rb2d;
+    private bool faceRight = true;
+    private SpriteRenderer spriteRenderer;
 
     // Use this for initialization
     void Start () {
         levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
         startPos = this.transform.position;
         this.rb2d = GetComponent<Rigidbody2D>();
+        this.spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
 	// Update is called once per frame
 
 	void FixedUpdate () {
-        float movementSpeedY = speed * Input.GetAxisRaw("Vertical") * Time.deltaTime;
-        float movementSpeedX = speed * Input.GetAxisRaw("Horizontal") * Time.deltaTime;
-        transform.Translate(movementSpeedX, movementSpeedY, 0);
+        float movementSpeedY = speed * Input.GetAxisRaw("Vertical");
+        float movementSpeedX = speed * Input.GetAxisRaw("Horizontal");
+        rb2d.velocity = new Vector2(movementSpeedX, movementSpeedY);
+
+        if (rb2d.velocity.x < 0 && faceRight) {
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
+            faceRight = false;
+
+        } else if (rb2d.velocity.x > 0 && !faceRight) {
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
+            faceRight = true;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -35,6 +47,6 @@ public class PlayerController : MonoBehaviour {
     public void kill()
     {
         this.transform.position = startPos;
-        this.rb2d.velocity = Vector2.zero;
+        //this.rb2d.velocity = Vector2.zero;
     }
 }
