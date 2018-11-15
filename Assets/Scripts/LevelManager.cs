@@ -12,11 +12,11 @@ public class LevelManager : MonoBehaviour {
     private int currEndpoints;
 
     private List<Vector3> coinPositions = new List<Vector3>();
-    private List<Vector3> aiPositions = new List<Vector3>();
     private GameObject[] coins;
     private GameObject[] AIs;
     private GameObject[] players;
     private GameObject[] endPoints;
+    private GameObject[] keys;
 
     // Use this for initialization
     void Start () {
@@ -28,12 +28,9 @@ public class LevelManager : MonoBehaviour {
         reqCoins = coins.Length;
 
         AIs = GameObject.FindGameObjectsWithTag("AIEnemy");
-        foreach (GameObject a in AIs)
-        {
-            aiPositions.Add(a.transform.position);
-        }
         players = GameObject.FindGameObjectsWithTag("Player");
         endPoints = GameObject.FindGameObjectsWithTag("Endpoint");
+        keys = GameObject.FindGameObjectsWithTag("Key");
         currEndpoints = 0;
 
     }
@@ -65,6 +62,12 @@ public class LevelManager : MonoBehaviour {
         for (int i = 0; i < players.Length; i++)
         {
             players[i].GetComponent<PlayerController>().kill();
+        }
+    }
+
+    private void respawnKeys() {
+        for (int i = 0; i < keys.Length; i++) {
+
         }
     }
 

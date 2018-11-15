@@ -33,7 +33,7 @@ namespace AStar {
         {
             this.bounds = GetComponent<BoxCollider2D>().bounds;
             startPos = this.transform.position;
-            StartCoroutine(startMove());
+            freezePos = false;
 
             offset = maxX_map;
             width = (maxX_map + offset) * (int)tileResolution;
@@ -129,6 +129,7 @@ namespace AStar {
 
         private IEnumerator startMove() {
             yield return new WaitForSeconds(spawnTime);
+            freezePos = false;
         }
     }
 }

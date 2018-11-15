@@ -7,7 +7,6 @@ public class LimitedAreaController : MonoBehaviour {
 
     public int initialTimeLeft = 5;
     private int timeLeft;
-    private Canvas canvas;
     public Text text;
     private bool playerInside = false;
     private Collider2D col;
@@ -18,10 +17,7 @@ public class LimitedAreaController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         col = GetComponent<BoxCollider2D>();
-        canvas = GetComponent<Canvas>();
-        //text.transform.SetParent(canvas.transform);
         text.text = initialTimeLeft.ToString();
-        //text.transform.position = this.transform.position;
         timeLeft = initialTimeLeft;
     }
 	

@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62e4b7b44d7c44a6dbc4f2c2376b5f7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1955994675064334, guid: e717a18d0b0fd4b4f8e24f714419696f, type: 2}
+  player: {fileID: 0}
   speed: 1.5
   pathFindInterval: 1
   tileResolution: 5

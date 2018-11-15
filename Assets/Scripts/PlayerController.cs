@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
     public float speed;
-    public float spawnDelay;
+    private float spawnDelay = 2;
     private LevelManager levelManager;
     private Vector2 startPos;
-
-    private SpriteRenderer spriteRenderer;
-    private BoxCollider2D col;
     private Rigidbody2D rb2d;
     private bool frozenPos;
 
@@ -17,8 +14,6 @@ public class PlayerController : MonoBehaviour {
     void Start () {
         levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
         startPos = this.transform.position;
-        this.spriteRenderer = GetComponent<SpriteRenderer>();
-        this.col = GetComponent<BoxCollider2D>();
         this.rb2d = GetComponent<Rigidbody2D>();
         frozenPos = false;
     }
@@ -42,8 +37,6 @@ public class PlayerController : MonoBehaviour {
 
     public void kill()
     {
-        spriteRenderer.enabled = false;
-        //col.enabled = false;
         this.transform.position = startPos;
         this.rb2d.Sleep();
         frozenPos = true;
@@ -52,8 +45,6 @@ public class PlayerController : MonoBehaviour {
 
     private IEnumerator respawn() {
         yield return new WaitForSeconds(spawnDelay);
-        //col.enabled = true;
-        spriteRenderer.enabled = true;
         this.rb2d.WakeUp();
         frozenPos = false;
     }

@@ -116,7 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialTimeLeft: 4
   text: {fileID: 114409189917647976}
-  player: {fileID: 1955994675064334, guid: e717a18d0b0fd4b4f8e24f714419696f, type: 2}
+  player: {fileID: 0}
 --- !u!114 &114409189917647976
 MonoBehaviour:
   m_ObjectHideFlags: 1
