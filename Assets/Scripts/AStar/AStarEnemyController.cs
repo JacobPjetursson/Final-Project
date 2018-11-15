@@ -10,14 +10,13 @@ namespace AStar {
 
         // Performance optimization
         public float pathFindInterval = 1f;
-        public float tileResolution = 5f;
+        public float tileResolution;
         public float optimality = 0.1f;
 
         // FIXME - hardcoded bounds
         private int maxX_map = 8;
         private int maxY_map = 5;
         private int offset;
-        private int spawnTime = 2;
 
         private int width;
         private int height;
@@ -26,15 +25,15 @@ namespace AStar {
         private Vector2 direction;
         private Bounds bounds;
         private Vector2 startPos;
-        private bool freezePos;
-        private bool search;
+
+        private LevelManager levelManager;
+        
 
         // Use this for initialization
         void Start()
         {
             this.bounds = GetComponent<PolygonCollider2D>().bounds;
             startPos = this.transform.position;
-            freezePos = false;
 
             offset = maxX_map;
             width = (maxX_map + offset) * (int)tileResolution;
@@ -42,10 +41,11 @@ namespace AStar {
             direction = new Vector2(0, 0);
             tilemap = new bool[width, height];
             AStar.optimality = this.optimality;
-
             fillTileMap();
             // create a grid
             grid = new TileGrid(width, height, tilemap);
+
+            levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
         }
 
         Vector2 posToTile(Vector2 pos)
@@ -69,27 +69,30 @@ namespace AStar {
         void Update()
         {
             StartCoroutine(findPath());
-            int freeze = (freezePos) ? 0 : 1;
-            this.transform.Translate(speed * direction * Time.deltaTime * freeze);
+            this.transform.Translate(speed * direction * Time.deltaTime);
         }
 
         void fillTileMap()
         {
             GameObject[] walls = GameObject.FindGameObjectsWithTag("Obstacle");
+            Bounds aiBounds = new Bounds();
+            Bounds[] wallBounds = new Bounds[walls.Length];
+            for (int i = 0; i < walls.Length; i++)
+            {
+                wallBounds[i] = walls[i].GetComponent<BoxCollider2D>().bounds;
+            }
             for (int i = 0; i < width; i++)
             {
                 for (int j = 0; j < height; j++)
                 {
                     Vector3 pos = tileToPos(new Vector2(i, j));
                     tilemap[i, j] = true;
-                    foreach (GameObject wall in walls)
+                    aiBounds.center = pos;
+                    aiBounds.extents = bounds.extents * 1.1f;
+                    foreach (Bounds wb in wallBounds)
                     {
-                        Bounds wallBounds = wall.GetComponent<BoxCollider2D>().bounds;
-                        Bounds aiBounds = new Bounds();
-                        aiBounds.center = pos;
-                        aiBounds.extents = bounds.extents;
                         // Check if bounds from certain position on map would collide with wall
-                        if (wallBounds.Intersects(aiBounds))
+                        if (wb.Intersects(aiBounds))
                         {
                             tilemap[i, j] = false;
                             break;
@@ -102,39 +105,34 @@ namespace AStar {
         IEnumerator findPath()
         {
             yield return new WaitForSeconds(pathFindInterval);
-            if (search) {
-                // create source and target points
-                Vector2 from_vec = posToTile(this.transform.position);
-                Point fromPoint = new Point((int)from_vec.x, (int)from_vec.y);
+            // create source and target points
+            Vector2 from_vec = posToTile(this.transform.position);
+            Point fromPoint = new Point((int)from_vec.x, (int)from_vec.y);
 
-                Bounds toBounds = player.GetComponent<BoxCollider2D>().bounds;
-                toBounds.center = posToTile(toBounds.center);
-                toBounds.extents += this.bounds.extents;
-                toBounds.extents *= tileResolution;
+            Bounds toBounds = player.GetComponent<BoxCollider2D>().bounds;
+            toBounds.center = posToTile(toBounds.center);
+            toBounds.extents += this.bounds.extents;
+            toBounds.extents *= tileResolution;
 
-                Point firstStep = AStar.FindPath(grid, fromPoint, toBounds);
-                if (firstStep == null)
-                    direction = Vector2.zero;
-                else
-                {
-                    Vector2 dirVec = new Vector2(firstStep.x - fromPoint.x, firstStep.y - fromPoint.y);
-                    direction = dirVec.normalized;
+            Point firstStep = AStar.FindPath(grid, fromPoint, toBounds);
+            if (firstStep == null)
+                direction = Vector2.zero;
+            else
+            {
+                Vector2 dirVec;
+                if (firstStep == fromPoint) {
+                    dirVec = new Vector2(player.transform.position.x - this.transform.position.x, player.transform.position.y - this.transform.position.y);
                 }
+                else{
+                    dirVec = new Vector2(firstStep.x - fromPoint.x, firstStep.y - fromPoint.y);
+                }
+                direction = dirVec.normalized;
             }
         }
 
         public void respawn()
         {
             this.transform.position = startPos;
-            freezePos = true;
-            search = false;
-            StartCoroutine(startMove());
-        }
-
-        private IEnumerator startMove() {
-            yield return new WaitForSeconds(spawnTime);
-            freezePos = false;
-            search = true;
         }
     }
 }

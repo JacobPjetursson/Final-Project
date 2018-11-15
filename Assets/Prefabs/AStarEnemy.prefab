@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4146103346544742}
   - component: {fileID: 212801545617583292}
   - component: {fileID: 114197838205056410}
-  - component: {fileID: 61498692522000312}
   - component: {fileID: 50379426111833562}
+  - component: {fileID: 60662416156538748}
   m_Layer: 10
   m_Name: AStarEnemy
   m_TagString: AIEnemy
@@ -37,8 +37,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1535210137949514}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.89, y: -3.33, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalPosition: {x: -6.853, y: 3.9, z: 0}
+  m_LocalScale: {x: 0.12, y: 0.12, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -63,8 +63,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &61498692522000312
-BoxCollider2D:
+--- !u!60 &60662416156538748
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -79,15 +79,54 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.8, y: 8.88}
+    oldSize: {x: 4.59, y: 5.07}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.64, y: 0.64}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.905, y: -2.305}
+      - {x: 1.905, y: -2.115}
+      - {x: 1.7149999, y: -1.8249999}
+      - {x: 1.4449999, y: -1.345}
+      - {x: 1.3149999, y: -0.85499996}
+      - {x: 1.185, y: -0.805}
+      - {x: 1.2049999, y: -0.235}
+      - {x: 1.0649999, y: -0.175}
+      - {x: 1.0649999, y: 0.765}
+      - {x: 0.92499995, y: 0.825}
+      - {x: 0.91499996, y: 1.385}
+      - {x: 0.865, y: 1.785}
+      - {x: 0.60499996, y: 2.0449998}
+      - {x: 0.405, y: 2.155}
+      - {x: 0.155, y: 2.2549999}
+      - {x: -0.114999995, y: 2.2649999}
+      - {x: -0.585, y: 2.2649999}
+      - {x: -0.78499997, y: 2.175}
+      - {x: -1.175, y: 1.755}
+      - {x: -1.295, y: 1.525}
+      - {x: -1.285, y: 0.945}
+      - {x: -1.395, y: 0.945}
+      - {x: -1.685, y: 0.905}
+      - {x: -1.785, y: 0.79499996}
+      - {x: -1.905, y: 0.635}
+      - {x: -2.0349998, y: 0.375}
+      - {x: -2.0349998, y: -0.085}
+      - {x: -1.9449999, y: -0.225}
+      - {x: -1.5949999, y: -0.615}
+      - {x: -1.435, y: -0.635}
+      - {x: -1.435, y: -1.425}
+      - {x: -1.295, y: -1.925}
+      - {x: -1.165, y: -2.075}
+      - {x: -0.825, y: -2.065}
+      - {x: -0.79499996, y: -2.2849998}
+      - {x: -0.775, y: -2.305}
+      - {x: -0.33499998, y: -2.305}
+      - {x: -0.275, y: -2.185}
+      - {x: 0.275, y: -2.175}
+      - {x: 0.305, y: -2.305}
 --- !u!114 &114197838205056410
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -102,7 +141,7 @@ MonoBehaviour:
   player: {fileID: 0}
   speed: 1.5
   pathFindInterval: 1
-  tileResolution: 5
+  tileResolution: 4
   optimality: 0
 --- !u!212 &212801545617583292
 SpriteRenderer:

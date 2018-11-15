@@ -7,7 +7,7 @@ namespace AStar
     public class AStar
     {
         // tweaking parameter for optimality
-        public static float optimality = 1.0f;
+        public static float optimality;
 
 
         public static Point FindPath(TileGrid grid, Point start, Bounds end)
@@ -64,6 +64,9 @@ namespace AStar
         private static Point GetDirection(Node startNode, Node endNode)
         {
             Node currentNode = endNode;
+            if (currentNode == startNode) {
+                return new Point(currentNode.x, currentNode.y);
+            }
             while (currentNode.parent != startNode)
             {
                 currentNode = currentNode.parent;
