@@ -14,9 +14,6 @@ namespace AStar
         {
             Node startNode = grid.nodes[start.x, start.y];
             Node endNode = grid.nodes[(int)end.center.x, (int)end.center.y];
-            //Debug.Log(startNode.x + " " + startNode.y);
-            //Debug.Log(endNode.x + " " + endNode.y);
-            //Debug.Log(end);
 
             List<Node> open = new List<Node>();
             HashSet<Node> closed = new HashSet<Node>();

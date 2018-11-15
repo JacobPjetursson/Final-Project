@@ -27,6 +27,7 @@ namespace AStar {
         private Bounds bounds;
         private Vector2 startPos;
         private bool freezePos;
+        private bool search;
 
         // Use this for initialization
         void Start()
@@ -101,22 +102,24 @@ namespace AStar {
         IEnumerator findPath()
         {
             yield return new WaitForSeconds(pathFindInterval);
+            if (search) {
+                // create source and target points
+                Vector2 from_vec = posToTile(this.transform.position);
+                Point fromPoint = new Point((int)from_vec.x, (int)from_vec.y);
 
-            // create source and target points
-            Vector2 from_vec = posToTile(this.transform.position);
-            Point fromPoint = new Point((int)from_vec.x, (int)from_vec.y);
+                Bounds toBounds = player.GetComponent<BoxCollider2D>().bounds;
+                toBounds.center = posToTile(toBounds.center);
+                toBounds.extents += this.bounds.extents;
+                toBounds.extents *= tileResolution;
 
-            Bounds toBounds = player.GetComponent<BoxCollider2D>().bounds;
-            toBounds.center = posToTile(toBounds.center);
-            toBounds.extents += this.bounds.extents;
-            toBounds.extents *= tileResolution;
-
-            Point firstStep = AStar.FindPath(grid, fromPoint, toBounds);
-            if (firstStep == null)
-                direction = Vector2.zero;
-            else {
-                Vector2 dirVec = new Vector2(firstStep.x - fromPoint.x, firstStep.y - fromPoint.y);
-                direction = dirVec.normalized;
+                Point firstStep = AStar.FindPath(grid, fromPoint, toBounds);
+                if (firstStep == null)
+                    direction = Vector2.zero;
+                else
+                {
+                    Vector2 dirVec = new Vector2(firstStep.x - fromPoint.x, firstStep.y - fromPoint.y);
+                    direction = dirVec.normalized;
+                }
             }
         }
 
@@ -124,12 +127,14 @@ namespace AStar {
         {
             this.transform.position = startPos;
             freezePos = true;
+            search = false;
             StartCoroutine(startMove());
         }
 
         private IEnumerator startMove() {
             yield return new WaitForSeconds(spawnTime);
             freezePos = false;
+            search = true;
         }
     }
 }

@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour {
 
     public GameObject player;
     public GameObject coin;
+    public GameObject ai;
     public int currLevel = 1;
     private int reqCoins;
     private int currEndpoints;
@@ -75,6 +76,13 @@ public class LevelManager : MonoBehaviour {
     private void respawnAIs() {
         for (int i = 0; i < AIs.Length; i++)
         {
+            //GameObject playerInstance = AIs[i].GetComponent<AStar.AStarEnemyController>().player;
+            //Destroy(AIs[i]);
+            //GameObject aiClone;
+            //aiClone = Instantiate(ai, aiPositions[i], this.transform.rotation) as GameObject;
+            //aiClone.GetComponent<AStar.AStarEnemyController>().player = playerInstance;
+            //aiClone.GetComponent<AStar.AStarEnemyController>().enabled = false;
+            //AIs[i] = aiClone;
             AIs[i].GetComponent<AStar.AStarEnemyController>().respawn();
 
         }
