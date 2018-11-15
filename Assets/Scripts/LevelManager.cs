@@ -5,22 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
 
-    private Vector2 startingPoint;
     public GameObject player;
-    public GameObject endPoint;
     public GameObject coin;
-    public GameObject ai;
     public int currLevel = 1;
     private int reqCoins;
+    private int currEndpoints;
 
     private List<Vector3> coinPositions = new List<Vector3>();
     private List<Vector3> aiPositions = new List<Vector3>();
     private GameObject[] coins;
     private GameObject[] AIs;
+    private GameObject[] players;
+    private GameObject[] endPoints;
 
     // Use this for initialization
     void Start () {
-        startingPoint = GameObject.FindGameObjectWithTag("Player").transform.position;
         coins = GameObject.FindGameObjectsWithTag("Coin");
         foreach (GameObject c in coins)
         {
@@ -33,6 +32,10 @@ public class LevelManager : MonoBehaviour {
         {
             aiPositions.Add(a.transform.position);
         }
+        players = GameObject.FindGameObjectsWithTag("Player");
+        endPoints = GameObject.FindGameObjectsWithTag("Endpoint");
+        currEndpoints = 0;
+
     }
 	
 	// Update is called once per frame
@@ -41,9 +44,9 @@ public class LevelManager : MonoBehaviour {
 	}
 
     public void restartLevel() {
-        spawnAIs();
-        spawnPlayer();
+        respawnAIs();
         spawnCoins();
+        respawnPlayers();
     }
 
     private void spawnCoins() {
@@ -58,23 +61,17 @@ public class LevelManager : MonoBehaviour {
         reqCoins = coins.Length;
     }
 
-    private void spawnPlayer() {
-        GameObject playerClone;
-        playerClone = Instantiate(player, startingPoint, this.transform.rotation) as GameObject;
-        playerClone.transform.SetParent(this.transform);
+    private void respawnPlayers() {
+        for (int i = 0; i < players.Length; i++)
+        {
+            players[i].GetComponent<PlayerController>().kill();
+        }
     }
 
-    private void spawnAIs() {
+    private void respawnAIs() {
         for (int i = 0; i < AIs.Length; i++)
         {
-
-            if (AIs[i] != null) {
-                Destroy(AIs[i]);
-            }
-            GameObject aiClone;
-            aiClone = Instantiate(ai, aiPositions[i], this.transform.rotation) as GameObject;
-            aiClone.transform.SetParent(this.transform);
-            AIs[i] = aiClone;
+            AIs[i].GetComponent<AStar.AStarEnemyController>().respawn();
 
         }
     }
@@ -90,6 +87,19 @@ public class LevelManager : MonoBehaviour {
 
     public int getReqCoins() {
         return reqCoins;
+    }
+
+    public void enterEndpoint()
+    {
+        currEndpoints += 1;
+        if (currEndpoints >= endPoints.Length) {
+            changeLevel();
+        }
+    }
+
+    public void exitEndpoint()
+    {
+        currEndpoints -= 1;
     }
 
 }

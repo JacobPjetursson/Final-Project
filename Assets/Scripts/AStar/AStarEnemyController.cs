@@ -17,6 +17,7 @@ namespace AStar {
         private int maxX_map = 8;
         private int maxY_map = 5;
         private int offset;
+        private int spawnTime = 2;
 
         private int width;
         private int height;
@@ -24,11 +25,15 @@ namespace AStar {
         private TileGrid grid;
         private Vector2 direction;
         private Bounds bounds;
+        private Vector2 startPos;
+        private bool freezePos;
 
         // Use this for initialization
         void Start()
         {
             this.bounds = GetComponent<BoxCollider2D>().bounds;
+            startPos = this.transform.position;
+            StartCoroutine(startMove());
 
             offset = maxX_map;
             width = (maxX_map + offset) * (int)tileResolution;
@@ -41,13 +46,7 @@ namespace AStar {
             // create a grid
             grid = new TileGrid(width, height, tilemap);
         }
-        /*
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-            if (other.gameObject.tag == "Player")
-                Destroy(this.gameObject);
-        }
-        */
+
         Vector2 posToTile(Vector2 pos)
         {
             pos.x += offset;
@@ -69,7 +68,8 @@ namespace AStar {
         void Update()
         {
             StartCoroutine(findPath());
-            this.transform.Translate(speed * direction * Time.deltaTime);
+            int freeze = (freezePos) ? 0 : 1;
+            this.transform.Translate(speed * direction * Time.deltaTime * freeze);
         }
 
         void fillTileMap()
@@ -103,12 +103,8 @@ namespace AStar {
             yield return new WaitForSeconds(pathFindInterval);
 
             // create source and target points
-            player = GameObject.FindGameObjectWithTag("Player");
-
             Vector2 from_vec = posToTile(this.transform.position);
-            //Vector2 to_vec = posToTile(player.transform.position);
             Point fromPoint = new Point((int)from_vec.x, (int)from_vec.y);
-            //Point toPoint = new Point((int)to_vec.x, (int)to_vec.y);
 
             Bounds toBounds = player.GetComponent<BoxCollider2D>().bounds;
             toBounds.center = posToTile(toBounds.center);
@@ -122,6 +118,17 @@ namespace AStar {
                 Vector2 dirVec = new Vector2(firstStep.x - fromPoint.x, firstStep.y - fromPoint.y);
                 direction = dirVec.normalized;
             }
+        }
+
+        public void respawn()
+        {
+            this.transform.position = startPos;
+            freezePos = true;
+            StartCoroutine(startMove());
+        }
+
+        private IEnumerator startMove() {
+            yield return new WaitForSeconds(spawnTime);
         }
     }
 }

@@ -12,9 +12,9 @@ public class EndPointController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        levelManager = this.transform.parent.gameObject.GetComponent<LevelManager>();
-        spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
-        open = levelManager.getReqCoins() == 0;
+        levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        open = levelManager.getReqKeys() == 0;
     }
 	
 	// Update is called once per frame
@@ -31,10 +31,15 @@ public class EndPointController : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player" && open) {
-            Destroy(this.gameObject);
-            // change level
-            levelManager.changeLevel();
+            levelManager.enterEndpoint();
+        }
+    }
 
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player" && open)
+        {
+            levelManager.exitEndpoint();
         }
     }
 }

@@ -12,13 +12,14 @@ public class LimitedAreaController : MonoBehaviour {
     private bool playerInside = false;
     private Collider2D col;
     private bool countingDown = false;
+    private GameObject player;
 
 
     // Use this for initialization
     void Start () {
         col = GetComponent<BoxCollider2D>();
         canvas = GetComponent<Canvas>();
-        //text.transform.SetParent(canvas.transform);
+        text.transform.SetParent(canvas.transform);
         text.text = initialTimeLeft.ToString();
         //text.transform.position = this.transform.position;
         timeLeft = initialTimeLeft;
@@ -26,9 +27,6 @@ public class LimitedAreaController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        // FIXME - consider fixing this by moving player instead of destroying it when it touches objects. 
-        // That way there is no reason to get game object every tick
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (col.bounds.Contains(player.transform.position)) {
             playerInside = true;
             if (!countingDown) {
@@ -49,8 +47,7 @@ public class LimitedAreaController : MonoBehaviour {
             timeLeft -= 1;
             text.text = timeLeft.ToString();
             if (timeLeft == 0) {
-                GameObject player = GameObject.FindGameObjectWithTag("Player");
-                Destroy(player);
+                player.GetComponent<PlayerController>().kill();
             }
         }
         countingDown = false;
