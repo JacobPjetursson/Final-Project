@@ -21,7 +21,7 @@ public class LevelManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
         string sceneName = SceneManager.GetActiveScene().name;
-        currLevel = (int) sceneName[sceneName.Length - 1];
+        currLevel = (int) char.GetNumericValue(sceneName[sceneName.Length - 1]);
         coins = GameObject.FindGameObjectsWithTag("Coin");
         foreach (GameObject c in coins)
         {

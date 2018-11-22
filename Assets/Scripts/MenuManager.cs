@@ -20,7 +20,6 @@ public class MenuManager : MonoBehaviour {
 	}
 
     public void ExitGame() {
-        GameSave.maxLevel = 2;
         SaveGame(gameSave);
         Application.Quit();
     }
