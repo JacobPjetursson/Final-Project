@@ -38,14 +38,12 @@ public class UIManager : MonoBehaviour {
     }
 
 	public void hidePaused(bool isDead){
-
+		Time.timeScale = 1;
         menuButton.gameObject.SetActive(false);
 		restartButton.gameObject.SetActive(false);
 		pauseText.SetActive(false);
 		fade.SetActive(false);
     }
-
-	
 
 	public void pauseControl(bool isDead){
         if(Time.timeScale == 1)
