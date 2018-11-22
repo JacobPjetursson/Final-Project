@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour {
 
     public GameObject coin;
-    public int currLevel = 1;
+    private int currLevel;
     private int reqCoins;
     private int currEndpoints;
 
@@ -20,6 +20,8 @@ public class LevelManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        string sceneName = SceneManager.GetActiveScene().name;
+        currLevel = (int) sceneName[sceneName.Length - 1];
         coins = GameObject.FindGameObjectsWithTag("Coin");
         foreach (GameObject c in coins)
         {
@@ -87,6 +89,7 @@ public class LevelManager : MonoBehaviour {
     }
 
     public void changeLevel() {
+        GameSave.maxLevel = currLevel + 1;
         string nextSceneName = "Level " + (currLevel + 1).ToString();
         SceneManager.LoadScene(nextSceneName);
     }
