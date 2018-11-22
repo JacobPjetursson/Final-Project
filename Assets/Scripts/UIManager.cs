@@ -1,12 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour {
 
 	GameObject[] pauseObjects;
-
-	private bool isDead;
 
 	// Use this for initialization
 	void Start () {
@@ -16,9 +15,7 @@ public class UIManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(isDead) {
-			showPaused();
-		}
+
 	}
 
 	public void showPaused(){
@@ -32,4 +29,8 @@ public class UIManager : MonoBehaviour {
             g.SetActive(false);
         }
     }
+
+	public void loadMenu() { 
+		SceneManager.LoadScene("Menu");
+	}
 }

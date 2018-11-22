@@ -12,10 +12,12 @@ public class LimitedAreaController : MonoBehaviour {
     private Collider2D col;
     private bool countingDown = false;
     public GameObject player;
+    public LevelManager levelManager;
 
 
     // Use this for initialization
     void Start () {
+        levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
         col = GetComponent<BoxCollider2D>();
         text.text = initialTimeLeft.ToString();
         timeLeft = initialTimeLeft;
@@ -43,7 +45,9 @@ public class LimitedAreaController : MonoBehaviour {
             timeLeft -= 1;
             text.text = timeLeft.ToString();
             if (timeLeft == 0) {
-                player.GetComponent<PlayerController>().kill();
+                levelManager.playerDied();
+                //player.GetComponent<PlayerController>().kill();
+
             }
         }
         countingDown = false;
