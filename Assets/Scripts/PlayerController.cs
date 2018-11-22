@@ -5,14 +5,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
     public float speed;
     private LevelManager levelManager;
-    private Vector2 startPos;
     private Rigidbody2D rb2d;
     private bool faceRight = true;
 
     // Use this for initialization
     void Start () {
         levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
-        startPos = this.transform.position;
         this.rb2d = GetComponent<Rigidbody2D>();
     }
 

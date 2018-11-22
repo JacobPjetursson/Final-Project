@@ -465,7 +465,7 @@ Prefab:
     - target: {fileID: 114893607639328276, guid: 6399a19c5b24d45b99d81caabf983524,
         type: 2}
       propertyPath: initialDirection.x
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 58529661612252566, guid: 6399a19c5b24d45b99d81caabf983524,
         type: 2}
@@ -1067,11 +1067,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4491269948141142, guid: e717a18d0b0fd4b4f8e24f714419696f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -7.02
+      value: -6.93
       objectReference: {fileID: 0}
     - target: {fileID: 4491269948141142, guid: e717a18d0b0fd4b4f8e24f714419696f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.02
+      value: -1.11
       objectReference: {fileID: 0}
     - target: {fileID: 4491269948141142, guid: e717a18d0b0fd4b4f8e24f714419696f, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1300,6 +1300,11 @@ Prefab:
     - target: {fileID: 1428049988547164, guid: 6399a19c5b24d45b99d81caabf983524, type: 2}
       propertyPath: m_Name
       value: BaseEnemy (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114893607639328276, guid: 6399a19c5b24d45b99d81caabf983524,
+        type: 2}
+      propertyPath: initialDirection.x
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6399a19c5b24d45b99d81caabf983524, type: 2}
@@ -2221,12 +2226,12 @@ Prefab:
     - target: {fileID: 114893607639328276, guid: 6399a19c5b24d45b99d81caabf983524,
         type: 2}
       propertyPath: initialDirection.y
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 114893607639328276, guid: 6399a19c5b24d45b99d81caabf983524,
         type: 2}
       propertyPath: initialDirection.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 58529661612252566, guid: 6399a19c5b24d45b99d81caabf983524,
         type: 2}

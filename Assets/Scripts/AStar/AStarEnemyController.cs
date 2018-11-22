@@ -25,17 +25,11 @@ namespace AStar {
         private TileGrid grid;
         private Vector2 direction;
         private Bounds bounds;
-        private Vector2 startPos;
         private Rigidbody2D rig2D;
-
-        private LevelManager levelManager;
-
 
         void Start()
         {
             this.bounds = GetComponent<PolygonCollider2D>().bounds;
-            startPos = this.transform.position;
-
             offset = maxX_map;
             width = (maxX_map + offset) * (int)tileResolution;
             height = (maxY_map + offset) * (int)tileResolution;
@@ -45,8 +39,6 @@ namespace AStar {
             fillTileMap();
             // create a grid
             grid = new TileGrid(width, height, tilemap);
-
-            levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
             rig2D = GetComponent<Rigidbody2D>();
         }
 
@@ -142,11 +134,6 @@ namespace AStar {
                 }
                 direction = dirVec.normalized;
             }
-        }
-
-        public void respawn()
-        {
-            this.transform.position = startPos;
         }
     }
 }

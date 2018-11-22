@@ -34,7 +34,8 @@ public class LevelManager : MonoBehaviour {
     public void changeLevel() {
         string nextSceneName = "Level " + (currLevel + 1).ToString();
         if (Application.CanStreamedLevelBeLoaded(nextSceneName)) {
-            GameSave.maxLevel = currLevel + 1;
+            GameManager.maxLevel = currLevel + 1;
+            GameManager.SaveGame();
             SceneManager.LoadScene(nextSceneName);
         } else {
             UI.GetComponent<UIManager>().endGame();

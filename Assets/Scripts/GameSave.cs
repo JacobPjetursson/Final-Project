@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 [System.Serializable]
 public class GameSave
 {
-    public static int maxLevel = 1;
+    public int maxLevel = 1;
 }
