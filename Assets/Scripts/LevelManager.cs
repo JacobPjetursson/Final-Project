@@ -17,6 +17,7 @@ public class LevelManager : MonoBehaviour {
     private GameObject[] players;
     private GameObject[] endPoints;
     private GameObject[] keys;
+    private GameObject[] missiles;
     public GameObject UI;
 
     // Use this for initialization
@@ -34,6 +35,7 @@ public class LevelManager : MonoBehaviour {
         players = GameObject.FindGameObjectsWithTag("Player");
         endPoints = GameObject.FindGameObjectsWithTag("Endpoint");
         keys = GameObject.FindGameObjectsWithTag("Key");
+        missiles = GameObject.FindGameObjectsWithTag("Missile");
         currEndpoints = 0;
 
         UI.GetComponent<UIManager>().hidePaused(isDead);
@@ -59,6 +61,7 @@ public class LevelManager : MonoBehaviour {
         Time.timeScale = 1;
         respawnAIs();
         respawnKeys();
+        respawnMissiles();
         spawnCoins();
         respawnPlayers();
     }
@@ -95,10 +98,22 @@ public class LevelManager : MonoBehaviour {
         }
     }
 
+    private void respawnMissiles() {
+        for (int i = 0; i < missiles.Length; i++)
+        {
+            missiles[i].GetComponent<HomingEnemyController>().respawn();
+        }
+    }
+
     public void changeLevel() {
-        GameSave.maxLevel = currLevel + 1;
         string nextSceneName = "Level " + (currLevel + 1).ToString();
-        SceneManager.LoadScene(nextSceneName);
+        if (Application.CanStreamedLevelBeLoaded(nextSceneName)) {
+            GameSave.maxLevel = currLevel + 1;
+            SceneManager.LoadScene(nextSceneName);
+        } else {
+            UI.GetComponent<UIManager>().endGame();
+            Time.timeScale = 0;
+        }
     }
 
     public void coinPickup() {
