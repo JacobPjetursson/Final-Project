@@ -556,9 +556,77 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: loadMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 212218467884037380, guid: 728535605cbd24b07a0bad0253365c33,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212218467884037380, guid: 728535605cbd24b07a0bad0253365c33,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212218467884037380, guid: 728535605cbd24b07a0bad0253365c33,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212218467884037380, guid: 728535605cbd24b07a0bad0253365c33,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 0.6509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 212218467884037380, guid: 728535605cbd24b07a0bad0253365c33,
+        type: 2}
+      propertyPath: m_DrawMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708630406483872, guid: 728535605cbd24b07a0bad0253365c33, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1280.8002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708630406483872, guid: 728535605cbd24b07a0bad0253365c33, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 808.5884
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708630406483872, guid: 728535605cbd24b07a0bad0253365c33, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708630406483872, guid: 728535605cbd24b07a0bad0253365c33, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114281113380321596, guid: 728535605cbd24b07a0bad0253365c33,
+        type: 2}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 728535605cbd24b07a0bad0253365c33, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &381055087 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1875773532784618, guid: 728535605cbd24b07a0bad0253365c33,
+    type: 2}
+  m_PrefabInternal: {fileID: 381055086}
+--- !u!1 &381055088 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1662936921629452, guid: 728535605cbd24b07a0bad0253365c33,
+    type: 2}
+  m_PrefabInternal: {fileID: 381055086}
+--- !u!114 &381055089 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114992838926365892, guid: 728535605cbd24b07a0bad0253365c33,
+    type: 2}
+  m_PrefabInternal: {fileID: 381055086}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &381055090 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114293859383385018, guid: 728535605cbd24b07a0bad0253365c33,
+    type: 2}
+  m_PrefabInternal: {fileID: 381055086}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &383731611
 Prefab:
   m_ObjectHideFlags: 0
@@ -1304,6 +1372,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 114454327215617142, guid: 0aaf8823e4f1c4ef2945f8e72a7677be,
+        type: 2}
+      propertyPath: restartButton
+      value: 
+      objectReference: {fileID: 381055090}
+    - target: {fileID: 114454327215617142, guid: 0aaf8823e4f1c4ef2945f8e72a7677be,
+        type: 2}
+      propertyPath: menuButton
+      value: 
+      objectReference: {fileID: 381055089}
+    - target: {fileID: 114454327215617142, guid: 0aaf8823e4f1c4ef2945f8e72a7677be,
+        type: 2}
+      propertyPath: fade
+      value: 
+      objectReference: {fileID: 381055088}
+    - target: {fileID: 114454327215617142, guid: 0aaf8823e4f1c4ef2945f8e72a7677be,
+        type: 2}
+      propertyPath: pauseText
+      value: 
+      objectReference: {fileID: 381055087}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0aaf8823e4f1c4ef2945f8e72a7677be, type: 2}
   m_IsPrefabAsset: 0

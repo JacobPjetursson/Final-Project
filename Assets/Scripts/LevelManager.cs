@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour {
     private int currLevel;
     private int reqCoins;
     private int currEndpoints;
+    private bool isDead;
 
     private List<Vector3> coinPositions = new List<Vector3>();
     private GameObject[] coins;
@@ -35,20 +36,26 @@ public class LevelManager : MonoBehaviour {
         keys = GameObject.FindGameObjectsWithTag("Key");
         currEndpoints = 0;
 
+        UI.GetComponent<UIManager>().hidePaused(isDead);
+
     }
 	
 	// Update is called once per frame
 	void Update () {
-
+        if(Input.GetKeyDown("escape") && !isDead){
+            UI.GetComponent<UIManager>().pauseControl(isDead);
+        }
 	}
 
     public void playerDied() {
-        UI.GetComponent<UIManager>().showPaused();
+        isDead = true;
+        UI.GetComponent<UIManager>().showPaused(isDead);
         Time.timeScale = 0;
     }
 
     public void restartLevel() {
-        UI.GetComponent<UIManager>().hidePaused();
+        isDead = false;
+        UI.GetComponent<UIManager>().hidePaused(isDead);
         Time.timeScale = 1;
         respawnAIs();
         respawnKeys();

@@ -16,6 +16,7 @@ TagManager:
   - Endpoint
   - ShowOnPause
   - UIManager
+  - ShowOnDeath
   layers:
   - Default
   - TransparentFX

@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour {
 
-	GameObject[] pauseObjects;
+	public Button menuButton;
+	public Button restartButton;
+	public GameObject pauseText;
+	public GameObject fade;
 
 	// Use this for initialization
 	void Start () {
-		pauseObjects = GameObject.FindGameObjectsWithTag("ShowOnPause");
-		hidePaused();
+
 	}
 	
 	// Update is called once per frame
@@ -18,15 +21,40 @@ public class UIManager : MonoBehaviour {
 
 	}
 
-	public void showPaused(){
-        foreach(GameObject g in pauseObjects){
-            g.SetActive(true);
-        }
+	public void showPaused(bool isDead){
+		if(isDead) {
+			restartButton.GetComponentInChildren<Text>().text = "Respawn";
+			pauseText.GetComponent<Text>().text = "You died...";
+		}
+		else if(!isDead) {
+			restartButton.GetComponentInChildren<Text>().text = "Restart";
+			pauseText.GetComponent<Text>().text = "Paused";
+		}
+		menuButton.gameObject.SetActive(true);
+		restartButton.gameObject.SetActive(true);
+		pauseText.SetActive(true);
+		fade.SetActive(true);
+ 
     }
 
-	public void hidePaused(){
-        foreach(GameObject g in pauseObjects){
-            g.SetActive(false);
+	public void hidePaused(bool isDead){
+
+        menuButton.gameObject.SetActive(false);
+		restartButton.gameObject.SetActive(false);
+		pauseText.SetActive(false);
+		fade.SetActive(false);
+    }
+
+	
+
+	public void pauseControl(bool isDead){
+        if(Time.timeScale == 1)
+        {
+            Time.timeScale = 0;
+            showPaused(isDead);
+        } else if (Time.timeScale == 0){
+            Time.timeScale = 1;
+            hidePaused(isDead);
         }
     }
 
