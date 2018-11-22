@@ -12,7 +12,7 @@ public class LimitedAreaController : MonoBehaviour {
     private Collider2D col;
     private bool countingDown = false;
     public GameObject player;
-    public LevelManager levelManager;
+    private LevelManager levelManager;
 
 
     // Use this for initialization
@@ -46,8 +46,6 @@ public class LimitedAreaController : MonoBehaviour {
             text.text = timeLeft.ToString();
             if (timeLeft == 0) {
                 levelManager.playerDied();
-                //player.GetComponent<PlayerController>().kill();
-
             }
         }
         countingDown = false;
