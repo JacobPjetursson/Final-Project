@@ -48,4 +48,8 @@ public class MenuManager : MonoBehaviour {
         }
         return new GameSave();
     }
+
+    public void LoadHowTo() {
+        SceneManager.LoadScene("HowTo");
+    }
 }

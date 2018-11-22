@@ -4,19 +4,16 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
     public float speed;
-    private float spawnDelay = 2;
     private LevelManager levelManager;
     private Vector2 startPos;
     private Rigidbody2D rb2d;
     private bool faceRight = true;
-    private SpriteRenderer spriteRenderer;
 
     // Use this for initialization
     void Start () {
         levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
         startPos = this.transform.position;
         this.rb2d = GetComponent<Rigidbody2D>();
-        this.spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
 	// Update is called once per frame
@@ -39,13 +36,8 @@ public class PlayerController : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D other)
     {
         string tag = other.gameObject.tag;
-        if (tag == "Enemy" || tag == "AIEnemy" || tag == "Missile") {
+        if (tag == "Enemy") {
             levelManager.playerDied();
         }
-    }
-
-    public void kill()
-    {
-        this.transform.position = startPos;
     }
 }
