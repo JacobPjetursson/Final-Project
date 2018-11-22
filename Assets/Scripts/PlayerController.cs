@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour {
     {
         string tag = other.gameObject.tag;
         if (tag == "Enemy" || tag == "AIEnemy") {
-            levelManager.restartLevel();
+            levelManager.playerDied();
         }
     }
 

@@ -578,7 +578,7 @@ GameObject:
   - component: {fileID: 824234119}
   - component: {fileID: 824234118}
   m_Layer: 5
-  m_Name: Button
+  m_Name: RespawnButton
   m_TagString: ShowOnPause
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -767,7 +767,7 @@ GameObject:
   - component: {fileID: 1131671295}
   - component: {fileID: 1131671294}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: MenuButton
   m_TagString: ShowOnPause
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
