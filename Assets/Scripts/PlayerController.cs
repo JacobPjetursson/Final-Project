@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D other)
     {
         string tag = other.gameObject.tag;
-        if (tag == "Enemy" || tag == "AIEnemy") {
+        if (tag == "Enemy" || tag == "AIEnemy" || tag == "Missile") {
             levelManager.playerDied();
         }
     }
@@ -47,6 +47,5 @@ public class PlayerController : MonoBehaviour {
     public void kill()
     {
         this.transform.position = startPos;
-        //this.rb2d.velocity = Vector2.zero;
     }
 }

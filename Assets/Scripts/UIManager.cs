@@ -61,4 +61,8 @@ public class UIManager : MonoBehaviour {
 	public void loadMenu() { 
 		SceneManager.LoadScene("Menu");
 	}
+
+    public void endGame() {
+        // TODO - end game stuff
+    }
 }
