@@ -14,6 +14,8 @@ TagManager:
   - AIEnemy
   - Coin
   - Endpoint
+  - ShowOnPause
+  - UIManager
   layers:
   - Default
   - TransparentFX
@@ -71,4 +73,7 @@ TagManager:
     locked: 0
   - name: 7
     uniqueID: 1014932607
+    locked: 0
+  - name: 8
+    uniqueID: 3061324487
     locked: 0

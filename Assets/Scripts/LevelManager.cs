@@ -16,6 +16,7 @@ public class LevelManager : MonoBehaviour {
     private GameObject[] players;
     private GameObject[] endPoints;
     private GameObject[] keys;
+    private GameObject UI;
 
     // Use this for initialization
     void Start () {
@@ -30,6 +31,7 @@ public class LevelManager : MonoBehaviour {
         players = GameObject.FindGameObjectsWithTag("Player");
         endPoints = GameObject.FindGameObjectsWithTag("Endpoint");
         keys = GameObject.FindGameObjectsWithTag("Key");
+        UI = GameObject.FindGameObjectWithTag("UIManager");
         currEndpoints = 0;
 
     }
@@ -40,6 +42,9 @@ public class LevelManager : MonoBehaviour {
 	}
 
     public void restartLevel() {
+        UI.GetComponent<UIManager>().showPaused();
+        Time.timeScale = 0;
+
         respawnAIs();
         respawnKeys();
         spawnCoins();
