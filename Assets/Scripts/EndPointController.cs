@@ -5,8 +5,8 @@ using UnityEngine;
 public class EndPointController : MonoBehaviour {
     private LevelManager levelManager;
     private SpriteRenderer spriteRenderer;
-    private Color red = new Color(255, 0, 0);
-    private Color green = new Color(0, 255, 0);
+    private Color purple = new Color(120, 0, 255);
+    private Color blue = new Color(255, 255, 255);
 
     private bool open;
 
@@ -20,9 +20,9 @@ public class EndPointController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (open) {
-            spriteRenderer.color = green;
+            spriteRenderer.color = blue;
         } else {
-            spriteRenderer.color = red;
+            spriteRenderer.color = purple;
         }
 
         open = levelManager.getReqCoins() == 0;
