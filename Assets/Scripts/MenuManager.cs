@@ -26,6 +26,7 @@ public class MenuManager : MonoBehaviour {
 
     public void StartGame() {
         SceneManager.LoadScene("Level " + GameManager.maxLevel.ToString());
+        Time.timeScale = 1;
     }
 
     public void LoadHowTo() {
