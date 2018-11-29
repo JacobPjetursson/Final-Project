@@ -8,13 +8,12 @@ public class UIManager : MonoBehaviour {
 
     public GameObject deathScreen;
     public GameObject pauseScreen;
-    private LevelManager levelManager;
     private GameObject deathCount;
 
 	void Start () {
         deathScreen.gameObject.SetActive(false);
         pauseScreen.gameObject.SetActive(false);
-        levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
+        //levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
         deathCount = GameObject.FindGameObjectWithTag("DeathCount");
     }
 	
@@ -23,7 +22,7 @@ public class UIManager : MonoBehaviour {
         {
             pauseControl();
         }
-        deathCount.GetComponent<Text>().text = "Deaths: " + levelManager.deaths.ToString();
+        deathCount.GetComponent<Text>().text = "Deaths: " + GameManager.deaths.ToString();
     }
 
 	public void showDeathScreen(bool show){

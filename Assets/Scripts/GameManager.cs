@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
     public static int maxLevel = 1;
+    public static int deaths = 0;
     public static int number_of_levels = 8;
     public static bool[] stars = new bool[number_of_levels];
 

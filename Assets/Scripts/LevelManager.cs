@@ -23,7 +23,7 @@ public class LevelManager : MonoBehaviour {
 	}
 
     public void playerDied() {
-        deaths++;
+        GameManager.deaths++;
         UI.GetComponent<UIManager>().showDeathScreen(true);
         Time.timeScale = 0;
     }
@@ -70,7 +70,4 @@ public class LevelManager : MonoBehaviour {
         reqEndpoints++;
     }
 
-    public int getDeaths() {
-        return deaths;
-    }
 }
