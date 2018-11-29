@@ -4,4 +4,4 @@ death text
 
 end game screen
 
-music
+kaktus som spikes. Tumbleweed som basic enemies. Ørken musik

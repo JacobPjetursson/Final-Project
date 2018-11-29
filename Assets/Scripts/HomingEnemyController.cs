@@ -61,7 +61,7 @@ public class HomingEnemyController : MonoBehaviour {
         else if(placement == 3 && player.transform.position.y >= tube.transform.position.y) {
             return false;
         }
-        else if(placement == 4 && player.transform.position.x > tube.transform.position.x) {
+        else if(placement == 4 && player.transform.position.x >= tube.transform.position.x) {
             return false;
         }
         return true;
@@ -85,10 +85,4 @@ public class HomingEnemyController : MonoBehaviour {
         }
         else pendingSpawn = true; 
     }
-
-    // public IEnumerator waitForSpawn(){
-    //     yield return new WaitForSeconds(respawnRate);
-    //     spawn();
-    // }
-
 }

@@ -1057,6 +1057,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &732320394
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4630105776492470, guid: b35d38244c99941788b520867547e9cb, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630105776492470, guid: b35d38244c99941788b520867547e9cb, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630105776492470, guid: b35d38244c99941788b520867547e9cb, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630105776492470, guid: b35d38244c99941788b520867547e9cb, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630105776492470, guid: b35d38244c99941788b520867547e9cb, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630105776492470, guid: b35d38244c99941788b520867547e9cb, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630105776492470, guid: b35d38244c99941788b520867547e9cb, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630105776492470, guid: b35d38244c99941788b520867547e9cb, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 82724137755385746, guid: b35d38244c99941788b520867547e9cb,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c402a78edc16e4636804f3b0cdeb93d4, type: 3}
+    - target: {fileID: 82724137755385746, guid: b35d38244c99941788b520867547e9cb,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.522
+      objectReference: {fileID: 0}
+    - target: {fileID: 114266520696529478, guid: b35d38244c99941788b520867547e9cb,
+        type: 2}
+      propertyPath: changeMusic
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b35d38244c99941788b520867547e9cb, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1001 &791406725
 Prefab:
   m_ObjectHideFlags: 0
