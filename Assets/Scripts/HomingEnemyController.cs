@@ -40,7 +40,7 @@ public class HomingEnemyController : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Obstacle") {
+        if (other.gameObject.tag == "Obstacle" || other.gameObject.tag == "InvisWall") {
             respawn();
         }
     }
