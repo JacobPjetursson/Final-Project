@@ -17,6 +17,7 @@ TagManager:
   - ShowOnPause
   - UIManager
   - Missile
+  - DeathCount
   layers:
   - Default
   - TransparentFX
