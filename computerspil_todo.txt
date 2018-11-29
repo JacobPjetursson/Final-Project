@@ -1,12 +1,6 @@
 lave levels
 
-death counter
-
-second goal
-
 death text
-
-choose level screen
 
 end game screen
 

@@ -1,3 +1,0 @@
-1) Fix projectile respawn code
-
-2) Area with limited time 

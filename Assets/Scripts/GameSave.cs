@@ -7,5 +7,6 @@ using System.Runtime.Serialization.Formatters.Binary;
 public class GameSave
 {
     public int maxLevel = 1;
+    public int deaths = 0;
     public bool[] stars;
 }
