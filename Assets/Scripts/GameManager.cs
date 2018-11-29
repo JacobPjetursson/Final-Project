@@ -6,11 +6,14 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
     public static int maxLevel = 1;
+    public static int number_of_levels = 8;
+    public static bool[] stars = new bool[number_of_levels];
 
     public static void SaveGame()
     {
         GameSave gameSave = new GameSave();
         gameSave.maxLevel = maxLevel;
+        gameSave.stars = stars;
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/save_game.dat");
         bf.Serialize(file, gameSave);
@@ -26,6 +29,7 @@ public class GameManager : MonoBehaviour {
             GameSave gs = (GameSave)bf.Deserialize(file);
             file.Close();
             maxLevel = gs.maxLevel;
+            stars = gs.stars;
         }
         return defaultGameSave();
     }
@@ -34,6 +38,7 @@ public class GameManager : MonoBehaviour {
     {
         GameSave gs = new GameSave();
         gs.maxLevel = 1;
+        gs.stars = stars;
         return gs;
     }
 }

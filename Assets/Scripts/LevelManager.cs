@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour {
     private int currLevel;
     private int reqCoins;
     private int reqEndpoints;
+    private bool pickedupStar;
 
     private GameObject[] endPoints;
     public GameObject UI;
@@ -35,6 +36,7 @@ public class LevelManager : MonoBehaviour {
         string nextSceneName = "Level " + (currLevel + 1).ToString();
         if (Application.CanStreamedLevelBeLoaded(nextSceneName)) {
             GameManager.maxLevel = currLevel + 1;
+            GameManager.stars[currLevel] = pickedupStar;
             GameManager.SaveGame();
             SceneManager.LoadScene(nextSceneName);
         } else {
@@ -44,6 +46,10 @@ public class LevelManager : MonoBehaviour {
 
     public void coinPickup() {
         reqCoins--;
+    }
+
+    public void starPickup() {
+        pickedupStar = true;
     }
 
     public int getReqCoins() {
