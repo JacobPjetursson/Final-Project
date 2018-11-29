@@ -32,4 +32,8 @@ public class MenuManager : MonoBehaviour {
     public void LoadHowTo() {
         SceneManager.LoadScene("HowTo");
     }
+
+    public void LoadChooseLevel() {
+        SceneManager.LoadScene("ChooseLevel");
+    }
 }

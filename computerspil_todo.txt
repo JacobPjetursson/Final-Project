@@ -9,3 +9,5 @@ death text
 choose level screen
 
 end game screen
+
+music
