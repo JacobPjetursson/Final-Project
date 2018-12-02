@@ -14,7 +14,8 @@ public class LevelManager : MonoBehaviour {
 
     void Start () {
         string sceneName = SceneManager.GetActiveScene().name;
-        currLevel = (int) char.GetNumericValue(sceneName[sceneName.Length - 1]);
+        currLevel = (int)char.GetNumericValue(sceneName[sceneName.Length - 1]);
+
         reqCoins = GameObject.FindGameObjectsWithTag("Coin").Length;
         reqEndpoints = GameObject.FindGameObjectsWithTag("Endpoint").Length;
     }
@@ -34,12 +35,15 @@ public class LevelManager : MonoBehaviour {
     }
 
     public void changeLevel() {
-        string nextSceneName = "Level " + (currLevel + 1).ToString();
+        int nextLevel = currLevel + 1;
+        string nextSceneName = "Level " + nextLevel.ToString();
         if (Application.CanStreamedLevelBeLoaded(nextSceneName)) {
-            if ((currLevel + 1) > GameManager.maxLevel)
-                GameManager.maxLevel = currLevel + 1;
+            if (nextLevel <= GameManager.maxLevel)
+                GameManager.maxLevel = nextLevel;
             GameManager.stars[currLevel] = pickedupStar;
             GameManager.SaveGame();
+
+            GameManager.changeMusic(nextLevel);
             SceneManager.LoadScene(nextSceneName);
         } else {
             UI.GetComponent<UIManager>().endGame();

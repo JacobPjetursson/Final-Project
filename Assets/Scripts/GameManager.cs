@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour {
     public static int deaths;
     public static int number_of_levels = 8;
     public static bool[] stars = new bool[number_of_levels];
-    public static bool[] changeMusic = { false, true, false, false, false, false, false, false };
+    public static string[] music = { "", "cave", "", "", "house", "", "", "" };
 
     public static void SaveGame()
     {
@@ -50,5 +50,9 @@ public class GameManager : MonoBehaviour {
         gs.stars = stars;
         gs.deaths = 0;
         return gs;
+    }
+
+    public static void changeMusic(int level) {
+        AudioManager.changeMusic(music[level-1]);
     }
 }

@@ -11,6 +11,7 @@ public class MenuManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        AudioManager.playMenuMusic();
         GameManager.LoadGame();
         Time.timeScale = 1;
 	}
