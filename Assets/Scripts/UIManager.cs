@@ -8,12 +8,13 @@ public class UIManager : MonoBehaviour {
 
     public GameObject deathScreen;
     public GameObject pauseScreen;
+    public GameObject endScreen;
     private GameObject deathCount;
 
 	void Start () {
-        deathScreen.gameObject.SetActive(false);
-        pauseScreen.gameObject.SetActive(false);
-        //levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
+        deathScreen.SetActive(false);
+        pauseScreen.SetActive(false);
+        endScreen.SetActive(false);
         deathCount = GameObject.FindGameObjectWithTag("DeathCount");
     }
 	
@@ -50,6 +51,7 @@ public class UIManager : MonoBehaviour {
 	}
 
     public void endGame() {
-        // TODO - end game stuff
+        Time.timeScale = 0;
+        endScreen.SetActive(true);
     }
 }

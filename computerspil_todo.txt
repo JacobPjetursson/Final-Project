@@ -1,7 +1,3 @@
 lave levels
 
-death text
-
-end game screen
-
 kaktus som spikes. Tumbleweed som basic enemies. Ørken musik
