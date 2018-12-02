@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour {
     public static int deaths;
     public static int number_of_levels = 8;
     public static bool[] stars = new bool[number_of_levels];
-    public static string[] music = { "", "cave", "", "", "house", "", "", "" };
+    public static string[] music = { "", "", "cave", "", "house", "", "", "" };
 
     public static void SaveGame()
     {

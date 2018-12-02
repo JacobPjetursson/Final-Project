@@ -6,6 +6,7 @@ public class ProjectileEnemyController : MonoBehaviour {
 
     public float speed = 5f;
     public float delay = 4f;
+    public float rotationSpeed = 50f;
     public Vector2 initialDirection;
     Rigidbody2D rig2D;
     private Vector2 startingPoint;
@@ -26,8 +27,8 @@ public class ProjectileEnemyController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        transform.Rotate(Vector3.back * rotationSpeed * Time.deltaTime);
+    }
 
     private void OnCollisionEnter2D(Collision2D other)
     {

@@ -6,6 +6,7 @@ public class EnemyController : MonoBehaviour {
 
     public float speed = 5f;
     public Vector2 initialDirection;
+    public float rotationSpeed = 50;
     Rigidbody2D rig2D;
 
     void Start () {
@@ -14,6 +15,6 @@ public class EnemyController : MonoBehaviour {
     }
 
     void Update () {
-        
+        transform.Rotate(Vector3.back * rotationSpeed * Time.deltaTime);
     }
 }

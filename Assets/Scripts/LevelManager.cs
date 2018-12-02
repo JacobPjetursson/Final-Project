@@ -65,7 +65,6 @@ public class LevelManager : MonoBehaviour {
     public void enterEndpoint()
     {
         reqEndpoints--;
-        print(reqEndpoints);
         if (reqEndpoints == 0) {
             changeLevel();
         }
