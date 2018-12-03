@@ -37,10 +37,10 @@ public class LevelManager : MonoBehaviour {
     public void changeLevel() {
         int nextLevel = currLevel + 1;
         string nextSceneName = "Level " + nextLevel.ToString();
+        GameManager.stars[currLevel] = pickedupStar;
         if (Application.CanStreamedLevelBeLoaded(nextSceneName)) {
             if (nextLevel > GameManager.maxLevel)
                 GameManager.maxLevel = nextLevel;
-            GameManager.stars[currLevel] = pickedupStar;
             GameManager.SaveGame();
 
             GameManager.changeMusic(nextLevel);
