@@ -25,9 +25,7 @@ public class AudioManager : MonoBehaviour {
     }
 
     public static void changeMusic(string music) {
-        print(music);
         if (music == "cave" && currMusic != caveMusic) {
-            print("Start cave music");
             currMusic.Stop();
             caveMusic.Play();
             currMusic = caveMusic;
