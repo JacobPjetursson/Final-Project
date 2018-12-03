@@ -19,23 +19,25 @@ public class AudioManager : MonoBehaviour {
         }
         houseMusic = GetComponents<AudioSource>()[0];
         caveMusic = GetComponents<AudioSource>()[1];
-        westernMusic = GetComponents<AudioSource>()[1];
+        westernMusic = GetComponents<AudioSource>()[2];
         currMusic = westernMusic;
         DontDestroyOnLoad(this.gameObject);
     }
 
     public static void changeMusic(string music) {
-        if (music == "cave") {
+        print(music);
+        if (music == "cave" && currMusic != caveMusic) {
+            print("Start cave music");
             currMusic.Stop();
             caveMusic.Play();
             currMusic = caveMusic;
         }
-        else if (music == "house") {
+        else if (music == "house" && currMusic != houseMusic) {
             currMusic.Stop();
             houseMusic.Play();
             currMusic = houseMusic;
         }
-        else if (music == "western")
+        else if (music == "western" && currMusic != westernMusic)
         {
             currMusic.Stop();
             westernMusic.Play();

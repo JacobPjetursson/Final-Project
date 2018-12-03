@@ -208,24 +208,9 @@ Prefab:
       propertyPath: door
       value: 
       objectReference: {fileID: 1793541335}
-    - target: {fileID: 114030123930705834, guid: fa7cfbfbfdf964777b9f41bb2d423a00,
-        type: 2}
-      propertyPath: doorSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114030123930705834, guid: fa7cfbfbfdf964777b9f41bb2d423a00,
-        type: 2}
-      propertyPath: doorInitialDirection.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1637735618684408, guid: fa7cfbfbfdf964777b9f41bb2d423a00, type: 2}
       propertyPath: m_Name
       value: Key (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114030123930705834, guid: fa7cfbfbfdf964777b9f41bb2d423a00,
-        type: 2}
-      propertyPath: doorInitialDirection.y
-      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa7cfbfbfdf964777b9f41bb2d423a00, type: 2}
@@ -277,11 +262,6 @@ Prefab:
     - target: {fileID: 1927491542337444, guid: df30a3f38e168473d998fc4e62d93517, type: 2}
       propertyPath: m_Name
       value: Door (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 50425945745303882, guid: df30a3f38e168473d998fc4e62d93517,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df30a3f38e168473d998fc4e62d93517, type: 2}
@@ -629,25 +609,6 @@ Prefab:
     - target: {fileID: 1151829335250504, guid: 4b0dd47c1ad024fa7a46642305b6357f, type: 2}
       propertyPath: m_Name
       value: Spikes (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4795627249798130, guid: 4b0dd47c1ad024fa7a46642305b6357f, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 114238356436189268, guid: 4b0dd47c1ad024fa7a46642305b6357f,
-        type: 2}
-      propertyPath: initialDir.x
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114238356436189268, guid: 4b0dd47c1ad024fa7a46642305b6357f,
-        type: 2}
-      propertyPath: spikeAngle.x
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114238356436189268, guid: 4b0dd47c1ad024fa7a46642305b6357f,
-        type: 2}
-      propertyPath: spikeAngle.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b0dd47c1ad024fa7a46642305b6357f, type: 2}
@@ -1174,6 +1135,11 @@ Prefab:
         type: 2}
       propertyPath: spikeAngle.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212808343055825982, guid: 4b0dd47c1ad024fa7a46642305b6357f,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b0dd47c1ad024fa7a46642305b6357f, type: 2}
@@ -2326,6 +2292,16 @@ Prefab:
     - target: {fileID: 1151829335250504, guid: 4b0dd47c1ad024fa7a46642305b6357f, type: 2}
       propertyPath: m_Name
       value: Spikes (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114238356436189268, guid: 4b0dd47c1ad024fa7a46642305b6357f,
+        type: 2}
+      propertyPath: spikeAngle.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114238356436189268, guid: 4b0dd47c1ad024fa7a46642305b6357f,
+        type: 2}
+      propertyPath: spikeAngle.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b0dd47c1ad024fa7a46642305b6357f, type: 2}
