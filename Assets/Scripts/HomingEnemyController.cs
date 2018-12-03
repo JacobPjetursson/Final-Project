@@ -9,6 +9,7 @@ public class HomingEnemyController : MonoBehaviour {
     public GameObject player;
     public GameObject tube;
     public int placement;
+    public float offset = 1f;
 
     private SpriteRenderer spriteRenderer;
     private CircleCollider2D col;
@@ -16,8 +17,7 @@ public class HomingEnemyController : MonoBehaviour {
     private Rigidbody2D r2d;
     private bool pendingSpawn;
 
-
-	void Start () {
+    void Start () {
         col = GetComponent<CircleCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         r2d = GetComponent<Rigidbody2D>();
@@ -52,16 +52,16 @@ public class HomingEnemyController : MonoBehaviour {
     }
 
     public bool canSpawn() {
-        if(placement == 1 && player.transform.position.y < tube.transform.position.y) {
+        if(placement == 1 && player.transform.position.y + offset < tube.transform.position.y) {
             return false;
         }
-        else if(placement == 2 && player.transform.position.x < tube.transform.position.x) {
+        else if(placement == 2 && player.transform.position.x + offset < tube.transform.position.x) {
             return false;
         }
-        else if(placement == 3 && player.transform.position.y >= tube.transform.position.y) {
+        else if(placement == 3 && player.transform.position.y - offset >= tube.transform.position.y) {
             return false;
         }
-        else if(placement == 4 && player.transform.position.x >= tube.transform.position.x) {
+        else if(placement == 4 && player.transform.position.x - offset >= tube.transform.position.x) {
             return false;
         }
         return true;
@@ -69,8 +69,8 @@ public class HomingEnemyController : MonoBehaviour {
 
     public IEnumerator spawn()
     {
-        if(canSpawn()) {
-            yield return new WaitForSeconds(respawnRate);
+        yield return new WaitForSeconds(respawnRate);
+        if (canSpawn()) {
             r2d.velocity = Vector2.zero;
             this.transform.position = startingPoint;
             // rotate towards target
