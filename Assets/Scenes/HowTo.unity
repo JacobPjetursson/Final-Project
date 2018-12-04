@@ -1186,8 +1186,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -131.2, y: 102}
-  m_SizeDelta: {x: 160, y: 72.3}
+  m_AnchoredPosition: {x: -131.2, y: 99.24}
+  m_SizeDelta: {x: 160, y: 77.82}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &982187742
 MonoBehaviour:
@@ -1221,7 +1221,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You can pause the game at any point be pressing the "Escape" key
+  m_Text: You can pause the game at any point be pressing the "Escape" key. You can
+    restart the level with the "Space" key
 --- !u!222 &982187743
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1387,7 +1388,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -131.2, y: 4.2320023}
+  m_AnchoredPosition: {x: -131.2, y: -0.00000047684}
   m_SizeDelta: {x: 160, y: 72.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1142523669

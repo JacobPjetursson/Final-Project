@@ -21,7 +21,12 @@ public class LevelManager : MonoBehaviour {
     }
 	
 	void Update () {
-	}
+        GameObject deathScreen = UI.GetComponent<UIManager>().deathScreen;
+        if ((Input.GetKeyDown("return") || Input.GetKeyDown("space")) && deathScreen.activeSelf)
+        {
+            restartLevel();
+        }
+    }
 
     public void playerDied() {
         GameManager.deaths++;
@@ -37,7 +42,7 @@ public class LevelManager : MonoBehaviour {
     public void changeLevel() {
         int nextLevel = currLevel + 1;
         string nextSceneName = "Level " + nextLevel.ToString();
-        GameManager.stars[currLevel] = pickedupStar;
+        GameManager.stars[currLevel - 1] = pickedupStar;
         if (Application.CanStreamedLevelBeLoaded(nextSceneName)) {
             if (nextLevel > GameManager.maxLevel)
                 GameManager.maxLevel = nextLevel;

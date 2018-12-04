@@ -52,16 +52,16 @@ public class HomingEnemyController : MonoBehaviour {
     }
 
     public bool canSpawn() {
-        if(placement == 1 && player.transform.position.y + offset < tube.transform.position.y) {
+        if(placement == 1 && player.transform.position.y - offset < tube.transform.position.y) {
             return false;
         }
-        else if(placement == 2 && player.transform.position.x + offset < tube.transform.position.x) {
+        else if(placement == 2 && player.transform.position.x - offset < tube.transform.position.x) {
             return false;
         }
-        else if(placement == 3 && player.transform.position.y - offset >= tube.transform.position.y) {
+        else if(placement == 3 && player.transform.position.y + offset >= tube.transform.position.y) {
             return false;
         }
-        else if(placement == 4 && player.transform.position.x - offset >= tube.transform.position.x) {
+        else if(placement == 4 && player.transform.position.x + offset >= tube.transform.position.x) {
             return false;
         }
         return true;
