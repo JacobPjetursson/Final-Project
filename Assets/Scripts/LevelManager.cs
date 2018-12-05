@@ -15,6 +15,7 @@ public class LevelManager : MonoBehaviour {
     void Start () {
         string sceneName = SceneManager.GetActiveScene().name;
         currLevel = (int)char.GetNumericValue(sceneName[sceneName.Length - 1]);
+        GameManager.changeMusic(currLevel);
 
         reqCoins = GameObject.FindGameObjectsWithTag("Coin").Length;
         reqEndpoints = GameObject.FindGameObjectsWithTag("Endpoint").Length;
@@ -48,7 +49,6 @@ public class LevelManager : MonoBehaviour {
                 GameManager.maxLevel = nextLevel;
             GameManager.SaveGame();
 
-            GameManager.changeMusic(nextLevel);
             SceneManager.LoadScene(nextSceneName);
         } else {
             UI.GetComponent<UIManager>().endGame();

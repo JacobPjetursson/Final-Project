@@ -40,7 +40,6 @@ public class ChooseLevelManager : MonoBehaviour {
     }
 
     void LoadLevel(int levelIdx) {
-        GameManager.changeMusic(levelIdx);
         SceneManager.LoadScene("Level " + levelIdx);
         Time.timeScale = 1;
     }
