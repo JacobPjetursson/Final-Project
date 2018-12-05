@@ -47,12 +47,11 @@ public class LevelManager : MonoBehaviour {
         if (Application.CanStreamedLevelBeLoaded(nextSceneName)) {
             if (nextLevel > GameManager.maxLevel)
                 GameManager.maxLevel = nextLevel;
-            GameManager.SaveGame();
-
             SceneManager.LoadScene(nextSceneName);
         } else {
             UI.GetComponent<UIManager>().endGame();
         }
+        GameManager.SaveGame();
     }
 
     public void coinPickup() {

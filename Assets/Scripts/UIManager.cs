@@ -19,7 +19,7 @@ public class UIManager : MonoBehaviour {
     }
 	
 	void Update () {
-        if (Input.GetKeyDown("escape") && !deathScreen.activeSelf)
+        if (Input.GetKeyDown("escape") && !deathScreen.activeSelf && !endScreen.activeSelf)
         {
             pauseControl();
         }
