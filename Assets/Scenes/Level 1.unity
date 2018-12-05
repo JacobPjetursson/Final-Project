@@ -1605,7 +1605,7 @@ Prefab:
     - target: {fileID: 114238356436189268, guid: 4b0dd47c1ad024fa7a46642305b6357f,
         type: 2}
       propertyPath: spikeAngle.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1151829335250504, guid: 4b0dd47c1ad024fa7a46642305b6357f, type: 2}
       propertyPath: m_Name
@@ -1614,7 +1614,7 @@ Prefab:
     - target: {fileID: 114238356436189268, guid: 4b0dd47c1ad024fa7a46642305b6357f,
         type: 2}
       propertyPath: speed
-      value: 0.7
+      value: 0.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b0dd47c1ad024fa7a46642305b6357f, type: 2}
@@ -2901,7 +2901,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4795627249798130, guid: 4b0dd47c1ad024fa7a46642305b6357f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.65
+      value: -3.73
       objectReference: {fileID: 0}
     - target: {fileID: 4795627249798130, guid: 4b0dd47c1ad024fa7a46642305b6357f, type: 2}
       propertyPath: m_LocalPosition.y
