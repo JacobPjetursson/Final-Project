@@ -11,11 +11,13 @@ public class LevelManager : MonoBehaviour {
 
     private GameObject[] endPoints;
     public GameObject UI;
+    private GameObject[] players;
 
     void Start () {
         string sceneName = SceneManager.GetActiveScene().name;
         currLevel = (int)char.GetNumericValue(sceneName[sceneName.Length - 1]);
         GameManager.changeMusic(currLevel);
+        players = GameObject.FindGameObjectsWithTag("Player");
 
         reqCoins = GameObject.FindGameObjectsWithTag("Coin").Length;
         reqEndpoints = GameObject.FindGameObjectsWithTag("Endpoint").Length;
@@ -30,6 +32,10 @@ public class LevelManager : MonoBehaviour {
     }
 
     public void playerDied() {
+        foreach (GameObject player in players)
+        {
+            player.GetComponent<SpriteRenderer>().enabled = false;
+        }
         GameManager.deaths++;
         UI.GetComponent<UIManager>().showDeathScreen(true);
         Time.timeScale = 0;
