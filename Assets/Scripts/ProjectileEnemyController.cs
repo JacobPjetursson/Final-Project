@@ -32,7 +32,7 @@ public class ProjectileEnemyController : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Obstacle")
+        if (other.gameObject.tag == "Obstacle" || other.gameObject.tag == "InvisWall" || other.gameObject.tag == "Enemy")
         {
             spriteRenderer.enabled = false;
             col.enabled = false;

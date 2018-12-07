@@ -208,6 +208,11 @@ Prefab:
       propertyPath: tube
       value: 
       objectReference: {fileID: 1641436617}
+    - target: {fileID: 114561663964510470, guid: 5655b569c5d2342268596b8d45ee96ac,
+        type: 2}
+      propertyPath: placement
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5655b569c5d2342268596b8d45ee96ac, type: 2}
   m_IsPrefabAsset: 0
