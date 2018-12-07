@@ -764,11 +764,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4491269948141142, guid: e717a18d0b0fd4b4f8e24f714419696f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -7
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 4491269948141142, guid: e717a18d0b0fd4b4f8e24f714419696f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.31
+      value: -3.83
       objectReference: {fileID: 0}
     - target: {fileID: 4491269948141142, guid: e717a18d0b0fd4b4f8e24f714419696f, type: 2}
       propertyPath: m_LocalPosition.z
@@ -925,6 +925,10 @@ Prefab:
     - target: {fileID: 1955994675064334, guid: e717a18d0b0fd4b4f8e24f714419696f, type: 2}
       propertyPath: m_Name
       value: playerUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955994675064334, guid: e717a18d0b0fd4b4f8e24f714419696f, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e717a18d0b0fd4b4f8e24f714419696f, type: 2}
@@ -2385,7 +2389,7 @@ Prefab:
     - target: {fileID: 60892473636299862, guid: fa7cfbfbfdf964777b9f41bb2d423a00,
         type: 2}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 60892473636299862, guid: fa7cfbfbfdf964777b9f41bb2d423a00,
         type: 2}
