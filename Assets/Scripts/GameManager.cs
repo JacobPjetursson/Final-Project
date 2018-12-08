@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
@@ -9,7 +7,6 @@ public class GameManager : MonoBehaviour {
     public static int deaths;
     public static int number_of_levels = 8;
     public static bool[] stars = new bool[number_of_levels];
-    public static string[] music = { "western", "western", "cave", "cave", "cave", "house", "house", "house" };
 
     public static void SaveGame()
     {
@@ -50,9 +47,5 @@ public class GameManager : MonoBehaviour {
         gs.stars = stars;
         gs.deaths = 0;
         return gs;
-    }
-
-    public static void changeMusic(int level) {
-        AudioManager.changeMusic(music[level-1]);
     }
 }

@@ -16,7 +16,7 @@ public class LevelManager : MonoBehaviour {
     void Start () {
         string sceneName = SceneManager.GetActiveScene().name;
         currLevel = (int)char.GetNumericValue(sceneName[sceneName.Length - 1]);
-        GameManager.changeMusic(currLevel);
+        AudioManager.changeMusic(currLevel);
         players = GameObject.FindGameObjectsWithTag("Player");
 
         reqCoins = GameObject.FindGameObjectsWithTag("Coin").Length;

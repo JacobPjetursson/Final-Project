@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour {
     private static AudioSource houseMusic;
     private static AudioSource westernMusic;
     private static AudioSource currMusic;
+    public static string[] musicStr = { "western", "western", "cave", "cave", "cave", "house", "house", "house" };
 
     void Awake()
     {
@@ -24,7 +25,8 @@ public class AudioManager : MonoBehaviour {
         DontDestroyOnLoad(this.gameObject);
     }
 
-    public static void changeMusic(string music) {
+    public static void changeMusic(int level) {
+        string music = musicStr[level - 1];
         if (music == "cave" && currMusic != caveMusic) {
             currMusic.Stop();
             caveMusic.Play();
