@@ -319,7 +319,7 @@ Prefab:
     - target: {fileID: 114197838205056410, guid: dbed82c9b3ff04a6faa673629a901047,
         type: 2}
       propertyPath: tileResolution
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114197838205056410, guid: dbed82c9b3ff04a6faa673629a901047,
         type: 2}
@@ -2863,7 +2863,7 @@ Prefab:
     - target: {fileID: 114197838205056410, guid: dbed82c9b3ff04a6faa673629a901047,
         type: 2}
       propertyPath: tileResolution
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114197838205056410, guid: dbed82c9b3ff04a6faa673629a901047,
         type: 2}
@@ -2873,7 +2873,7 @@ Prefab:
     - target: {fileID: 114197838205056410, guid: dbed82c9b3ff04a6faa673629a901047,
         type: 2}
       propertyPath: speed
-      value: 1.8
+      value: 1.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbed82c9b3ff04a6faa673629a901047, type: 2}

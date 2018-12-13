@@ -2157,7 +2157,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4401940618343178, guid: 897e6306647d54eb8bb86a72d915293e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5.52
+      value: 5.7933
       objectReference: {fileID: 0}
     - target: {fileID: 4401940618343178, guid: 897e6306647d54eb8bb86a72d915293e, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2193,7 +2193,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4401940618343178, guid: 897e6306647d54eb8bb86a72d915293e, type: 2}
       propertyPath: m_LocalScale.x
-      value: 8.0418625
+      value: 7.1878166
       objectReference: {fileID: 0}
     - target: {fileID: 212313229838515436, guid: 897e6306647d54eb8bb86a72d915293e,
         type: 2}
@@ -2341,11 +2341,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4401940618343178, guid: b6842dc681b6e46b0bed1b9b0160e8f1, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.159
+      value: 2.432122
       objectReference: {fileID: 0}
     - target: {fileID: 4401940618343178, guid: b6842dc681b6e46b0bed1b9b0160e8f1, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.387
+      value: -0.37
       objectReference: {fileID: 0}
     - target: {fileID: 4401940618343178, guid: b6842dc681b6e46b0bed1b9b0160e8f1, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2397,7 +2397,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4401940618343178, guid: b6842dc681b6e46b0bed1b9b0160e8f1, type: 2}
       propertyPath: m_LocalScale.x
-      value: 2.4624593
+      value: 3.3158863
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6842dc681b6e46b0bed1b9b0160e8f1, type: 2}
@@ -3294,7 +3294,7 @@ Prefab:
     - target: {fileID: 114197838205056410, guid: dbed82c9b3ff04a6faa673629a901047,
         type: 2}
       propertyPath: tileResolution
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114197838205056410, guid: dbed82c9b3ff04a6faa673629a901047,
         type: 2}
