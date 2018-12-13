@@ -408,7 +408,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1408454220351362, guid: b35d38244c99941788b520867547e9cb, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b35d38244c99941788b520867547e9cb, type: 2}
@@ -1710,6 +1710,16 @@ Prefab:
         type: 2}
       propertyPath: scrollSpeed
       value: -0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 212463214813641360, guid: df305769cd2694277b08a1613a7c0118,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 53548547
+      objectReference: {fileID: 0}
+    - target: {fileID: 212463214813641360, guid: df305769cd2694277b08a1613a7c0118,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df305769cd2694277b08a1613a7c0118, type: 2}
