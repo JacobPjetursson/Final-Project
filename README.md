@@ -5,7 +5,7 @@ The project was made with Unity 2018.2.8f1
 
 ## How it looks like
 ### Level 2
-![How to play](demo/lvl2.gif)
+![How to play](demo/lvl4.gif)
 ### Level 7
 ![How to play](demo/lvl7.gif)
 ### How to play
