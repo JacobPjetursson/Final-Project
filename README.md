@@ -1,14 +1,12 @@
 # Unity-2D-Game-Project
+This is a small 2D platformer game featuring 8 customized levels. You play as a dragon and the objective is to finish the levels without being hit by any moving objects or enemies.
 
-Here are some images from the game
+The project was made with Unity 2018.2.8f1
 
-## Menu
-![Start of game](https://github.com/JacobPjetursson/Unity-2D-Game-Project/blob/master/start.png)
-
-## Level 1
-![Level](https://github.com/JacobPjetursson/Unity-2D-Game-Project/blob/master/level.png)
-
-## Choose level
-![choose](https://github.com/JacobPjetursson/Unity-2D-Game-Project/blob/master/choose_level.png)
-## How to play
-![How to play](https://github.com/JacobPjetursson/Unity-2D-Game-Project/blob/master/howto.png)
+## How it looks like
+### Level 2
+![How to play](demo/lvl2.gif)
+### Level 7
+![How to play](demo/lvl7.gif)
+### How to play
+![How to play](demo/howto.png)
