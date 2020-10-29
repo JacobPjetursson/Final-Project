@@ -7,6 +7,7 @@ The project was made with Unity 2018.2.8f1
 ### Level 2
 ![How to play](demo/lvl4.gif)
 ### Level 7
+The player controls two dragons at the same time, and need to position both of them at the end portal simultaneously to finish the level.
 ![How to play](demo/lvl7.gif)
 ### How to play
 ![How to play](demo/howto.png)
